@@ -182,3 +182,7 @@ p.divider-text {
       box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.58);
     }
   }
+  iframe{
+      margin-top: 5%;
+      margin-bottom: 5%;
+  }

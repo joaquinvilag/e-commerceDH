@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
     <head>
       <%- include('partials/head') %>
       <meta charset="UTF-8">
@@ -10,10 +11,13 @@
       <title>plantilla de producto - Dietetica</title>
     </head> 
     <body>
+        <%- include('partials/header.ejs') %>
         <main>
           <h1>Todo Pal Costado</h1>
           <p>Dietetica de primera calidad</p>
         </main> 
+
+ 
 
         <section>
           
@@ -142,14 +146,14 @@
         </div>
 
       </section>
+      <section class="video-home">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/KdXNZx4C09o?start=100" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
 
 
 
+    
+    <%- include('partials/bootstrap-jq-poppers') %>
+  </body>
 
-
-
-
-
-      <%- include('partials/bootstrap-jq-poppers') %>
-    </body>
 </html>
