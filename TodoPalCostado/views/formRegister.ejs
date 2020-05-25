@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/styleRegisterLogin.css">
+    <title>Registro</title>
+</head>
+<body>
+        <!-- Partials Header -->
+    <%- include('partials/header.ejs') %>
+        <!-- ===============   -->
+    
+    <section class="sec_form_register">
+        <form class="div-form-register">
+            <div class="div_form_register">
+                <h3 class="h3_menu_register">
+                    <a class="a-form-register off-btn" href="/users/login">Iniciar Sesión</a>
+                </h3>
+                <h3>
+                    <a class="a-form-register" href="#">Registrarse</a>
+                </h3>
+            </div>
+            <form action="" class="form_register_date">
+                <div class="group_form_register">
+                    <input type="text" class="field_form_register" required><span class="barra"></span>
+                    <label>Nombre</label><br>
+                </div>
+                <div class="group_form_register">
+                    <input type="email" class="field_form_register" required><span class="barra"></span>
+                    <label>Email</label><br>
+                </div>
+                <div class="group_form_register">
+                    <input type="password" class="field_form_register" required><span class="barra"></span>
+                    <label class="label_form_register">Contraseña</label class="label_form_register"><br>
+                </div>
+                <div class="group_form_register">
+                    <input type="password" class="field_form_register" required><span class="barra"></span>
+                    <label class="label_form_register">Confirmar contraseña</label><br>
+                </div>
+        
+                <div class="center_content_btn_register">
+                    <input type="submit" class="btn btn-green" value="Registrar">
+                </div>
+            </form>
+        </form>
+    </section>    
+
+
+
+</body>
+</html>

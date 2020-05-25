@@ -145,7 +145,7 @@ nav ul li a{
   top: 50px;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--light-green);
+  background: rgb(77, 235, 190);
   height: 50px;
   border-radius: 40px;
   padding: 10px;
@@ -166,7 +166,7 @@ nav ul li a{
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: var(--light-green);
+  background: rgb(77, 235, 190);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -213,7 +213,7 @@ nav ul li a{
 
 /*=== Menu Options ===*/
   .nav_menu_options{
-      background-color: var(--light-green);
+      background: rgb(77, 235, 190);
       height: 50px;
       border-top: 1px solid var(--brown);
       border-bottom: 1px solid var(--brown);
