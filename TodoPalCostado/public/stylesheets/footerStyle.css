@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+footer{
+    width: 100%;
+    max-width: 1600px;
+    background-color: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.container-footer{
+    
+    width: 100%;
+    font-family: 'Muli', sans-serif;
+    color: #c2b1a9;   
+}
+
+.footer-info {
+    width: 100%;
+    display: flex;
+}
+.footer-col-menu{
+    margin-top: 10px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto; 
+    
+}
+.footer-menu{
+    margin: 16px 0 35px;
+    padding: 0;
+    list-style: none;
+}
+.footer-menu-item {
+    padding: 4% 4% 4% 4%;
+    flex-direction: column;
+}
+.footer-menu-link {
+    text-decoration: none;
+    color: #5c4c44;
+}
+.footer-medio-de-pago{
+    width: 100%;
+    height: 100px;
+    font-family: 'Muli', sans-serif;
+    color: #c2b1a9;
+}
+.footer-pagar{
+    margin-left: 40px;
+    display: flex;
+}
+.footer-col-medio-de-pago{
+    width: 30%;
+}
+.image-payments { 
+    width: 400px;
+}
+
+.copyright{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Muli', sans-serif;
+    color: #c2b1a9;
+}
+
+.h3-footer{
+    margin-top: 2%;
+    margin-left: 5%;
+    font-size: 20px;
+    font-family: 'Muli', sans-serif;
+}
+.h4-footer{
+    font-size: 12px;
+}
+
+@media screen and (max-width: 768px){
+    
+    .container-footer {
+        margin: auto;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footer-info {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; 
+    }
+    .footer-col-menu{
+        width: 40%;
+        margin-left: auto;
+        font-size: 14px;        
+    }
+    .footer-medio-de-pago{
+        width: 100%;
+        height: 160px;
+    }
+    .footer-pagar{
+        display: flex;
+        flex-flow: column wrap;
+    }
+    .footer-col-medio-de-pago{
+        width: 100%;
+        height: 50%;
+    }
+    .image-payments{
+        width: 90%;
+    }
+    .copyright{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+    }
+    
+
+}
+
+/*  colores para favIcon Dodgerblue - Mediumslateblue 
+    <span style="font-size: 48px; color: Dodgerblue;"></>        */

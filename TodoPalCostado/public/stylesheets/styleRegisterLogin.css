@@ -6,7 +6,7 @@
   section{
     background-image: url("https://dietadukan.pro/wp-content/uploads/2019/02/na_5b22396533866.jpg");
     width: 100%;
-    height: 100vh;
+    height: 800px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -14,7 +14,7 @@
   }
   .div-form-register{
     width: 30%;
-    height: 660px;
+    height:84%;
     background-color: #ffffff;
     padding: 10px 0;
     border-radius: 10px;
