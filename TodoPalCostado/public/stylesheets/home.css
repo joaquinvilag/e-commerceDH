@@ -19,10 +19,25 @@ h2.subtitle {
 p {
     font-family: 'Lato', sans-serif;
 }
+
 h1 a {
     font-family: '/font/OpenSans-Regular';
     color: rgb(109, 109, 109);
     text-decoration: none;
+}
+
+.iso {
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
+}
+
+.iso-img {
+    max-width: 300px;
+}
+
+.banner-titles {
+    width: 70%;
 }
 
 h1 a:hover {
@@ -31,6 +46,8 @@ h1 a:hover {
     text-decoration: none;
 }
 
+
+
 section {
     display: flex;
     justify-content: space-around;
@@ -38,9 +55,13 @@ section {
 }
 
 main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     padding-left: 10%;
     padding-top: 10%;
     padding-bottom: 10%;
+    align-items: center;
 }
 
 main::after {
@@ -54,6 +75,7 @@ main::after {
     right: 0;
     position: absolute;
     z-index: -1;   
+    height: 90vh;
   }
 
 article.product:hover {
