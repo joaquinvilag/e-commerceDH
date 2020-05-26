@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+      <%- include('partials/head') %>
+      <link rel="stylesheet" href="/stylesheets/productPage.css">
+      <title>plantilla de producto - Dietetica</title>
+    </head> 
+    <body>
+        <%- include('partials/header.ejs') %>
+        <h2 class="subtitle">Ciruelas Desecadas</h1>
+        <section>
+        
+          <article class="product">
+            <div class="imgProduct">
+                <div class="imageProduct-flex">
+                    <img class="productPh" src="/img/Frutas Desecadas/ciruelasdesecadas.jpg" alt="ciruelas desecadas">
+                    <div class="sliderDots">
+                        <a href="#" class="sliderDot"></a>
+                        <a href="#" class="sliderDot"></a>
+                        <a href="#" class="sliderDot"></a>
+                        <a href="#" class="sliderDot"></a>
+                    </div>
+                </div>
+            </div>
+                <!--<div class="miniPh">
+                  <div>
+                      <img class="mini" src="../Desarrollo/public/img/Frutos Desecados/pasasdeuva.jpg" alt="">
+                  </div>
+                  <div>
+                      <img class="mini" src="../Desarrollo/public/img/Frutos Desecados/tomatesecos.jpg" alt="">
+                  </div>
+                  
+                </div>-->
+            <div class="desc">
+                <h1 class="productTitle">Ciruelas Desecadas</h1>
+                <p class="price">$500</p>
+                <p class="format">por Kilogramo</p>
+                <p class="description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum aliquid sunt excepturi sint at deserunt commodi quos recusandae exercitationem assumenda, ipsa, fugit voluptate facilis repudiandae laudantium nisi iure nobis quisquam.</p>
+
+            </div>
+            <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>
+                
+          </article>
+          
+          
+      
+            
+      
+
+
+
+    <!--====== Footer =======-->
+    <%- include('partials/footer') %>
+    <!--===== End Footer =======-->
+
+    <%- include('partials/bootstrap-jq-poppers') %>
+  </body>
+
+</html>

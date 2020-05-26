@@ -5,7 +5,10 @@
 }
 footer{
     width: 100%;
+<<<<<<< HEAD
     /* max-width: 1600px; */
+=======
+>>>>>>> 9aa258ce25c6d28501a9aeded8f9c48759c90577
     background-color: #E5E5E5;
     display: flex;
     flex-direction: column;
@@ -52,6 +55,7 @@ footer{
     padding-left: 60px;
     font-family: 'Muli', sans-serif;
     color: #c2b1a9;
+    display:none; /* le puse none porque se veía feo. J*/
 }
 .footer-pagar{
     margin-left: 40px;
@@ -66,7 +70,7 @@ footer{
 
 .copyright{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     font-family: 'Muli', sans-serif;
     color: #c2b1a9;
 }
