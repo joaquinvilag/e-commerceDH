@@ -5,7 +5,6 @@
 }
 footer{
     width: 100%;
-    max-width: 1600px;
     background-color: #E5E5E5;
     display: flex;
     flex-direction: column;
@@ -50,6 +49,7 @@ footer{
     height: 100px;
     font-family: 'Muli', sans-serif;
     color: #c2b1a9;
+    display:none; /* le puse none porque se veía feo. J*/
 }
 .footer-pagar{
     margin-left: 40px;
@@ -64,7 +64,7 @@ footer{
 
 .copyright{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     font-family: 'Muli', sans-serif;
     color: #c2b1a9;
 }
