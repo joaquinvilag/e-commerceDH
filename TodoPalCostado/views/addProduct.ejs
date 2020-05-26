@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <title>Carga de productos (ADMIN)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;400&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        font-family: 'Muli', sans-serif;
+        background-color: aliceblue;
+            
+         }
+         .section-add-product{
+             width: 90%;
+             margin: auto;
+             display: flex;
+             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+         }
+         .add-product-header {
+            width: 100%;
+            margin-top: 30px;
+            background-color: #51ffc5;
+            font-size: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+         }
+         .div-form-add-product{
+            padding-top: 20px;
+            margin-top: 30px;
+            width: 100%;
+            height: 600px;
+            background-color:#E5E5E5 ;
+            font-size: 18px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-radius: 5px;
+            
+         }
+         .form-add-product{
+             width: 100%;
+             display: flex;
+             flex-direction: column;
+             /* justify-content: center; */
+             /* align-items: center; */
+         }
+         .addproduct-type{
+            /* min-width: 250px; */
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+         }
+         .label-add-product{
+             line-height: 40px;
+             font-size: 20px;
+         }
+         .input-1{
+             width: 80%;
+             height: 30px;
+             margin-top: 7px;
+             margin-bottom: 7px;
+             border-radius: 5px;
+             border-style: none;
+         }
+         textarea{
+            width: 80%;
+            resize: none;
+         }
+         .btn-enviar{
+             margin: auto;
+             padding: 10px 40px;
+             border-radius: 5px;
+             background: #6be0a0;
+             color: rgba(97, 97, 97, 0.664) ;
+         }
+         @media(max-width: 768px){
+            .section-add-product{
+                width: 80%;
+            }
+
+         }
+         @media(max-width: 1024px){
+            .section-add-product{
+                width: 60%;
+            }
+
+         }
+         @media(min-width: 1024px){
+            .section-add-product{
+                width: 40%;
+            }
+
+         }
+
+        
+      </style>
+</head>
+<body>
+    <!-- ====== Header====== -->
+    <%- include('partials/header.ejs') %>
+    <!-- =================== -->
+   <section class="section-add-product">
+        <div class="add-product-header">
+            <h3 class="form-titulo">Bienvenido al formulario de carga de productos</h3>
+        </div>
+
+        <div class="div-form-add-product">    
+            <form class="form-add-product" class="style-1"action="#" method="POST"> 
+                <div class="addproduct-type">       
+                    <label class="label-add-product"> Ingresar nombre de producto: </label>
+                    <input type="text" name="products" placeholder="Ingresar producto" class="input-1" required>
+                </div>
+                <div class="addproduct-type">
+                    <label class="label-add-product"> Precio del Producto:</label>
+                    <input type="number" name="price" placeholder="Ingresar precio " class="input-1" required>
+                </div>
+                <div class="addproduct-type">
+                    <label class="label-add-product"> stock:</label>
+                    <input type="number" name="price" placeholder="Ingresar stock" class="input-1" required>
+                </div>
+                <div class="addproduct-type">
+                    <label class="label-add-product"> Descrición de producto:</label>
+                    <textarea name="Descripción" id="" cols="30" rows="10"></textarea>
+                </div>
+
+                <input type="submit" value="Cargar" class="btn-enviar" required>
+            </form>
+        </div>
+   </section>
+   <!--====== Footer =======-->
+   <%- include('partials/footer') %>
+   <!--===== End Footer =======-->
+
+   <%- include('partials/bootstrap-jq-poppers') %>
+        
+</body>
+</html>

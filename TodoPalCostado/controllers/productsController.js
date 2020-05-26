@@ -11,7 +11,7 @@ const controller = {
         res.send("Detalle de producto seleccionado");
     },
     create: function(req, res){
-        res.send("Formulario de creación de producto");
+        res.render("addProduct");
     },
     store: function(req, res){
         res.send("Guardar nuevo producto por POST");
