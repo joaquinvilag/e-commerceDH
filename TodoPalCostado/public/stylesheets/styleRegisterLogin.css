@@ -30,12 +30,20 @@
     line-height: 100px;
   }
   
-  h3{
+  .h4_menu_register{
     padding-top: 20px;
+    font-size: 20px;
+    
   }
   .a-form-register{
     color: black;
     text-decoration: none;
+    
+  }
+  .a-form-register:hover{
+    font-size: 26px;
+    color: black;
+    transition: 0.3s ease-in;
   }
   .off-btn{
     opacity: 0.3;
