@@ -4,17 +4,17 @@
     <head>
       <%- include('partials/head') %>
       <link rel="stylesheet" href="/stylesheets/productPage.css">
-      <title>plantilla de producto - Dietetica</title>
+      <title><%= product.name %> - Dietetica</title>
     </head> 
     <body>
         <%- include('partials/header.ejs') %>
-        <h2 class="subtitle">Ciruelas Desecadas</h1>
+        <h2 class="subtitle"><%= product.name %></h1>
         <section>
         
           <article class="product">
             <div class="imgProduct">
                 <div class="imageProduct-flex">
-                    <img class="productPh" src="/img/Frutas Desecadas/ciruelasdesecadas.jpg" alt="ciruelas desecadas">
+                    <img class="productPh" src="/img/<%= product.image %>" alt="imagen producto">
                     <div class="sliderDots">
                         <a href="#" class="sliderDot"></a>
                         <a href="#" class="sliderDot"></a>
@@ -33,10 +33,10 @@
                   
                 </div>-->
             <div class="desc">
-                <h1 class="productTitle">Ciruelas Desecadas</h1>
-                <p class="price">$500</p>
+                <h1 class="productTitle"><%= product.name %></h1>
+                <p class="price">$ <%= product.price %></p>
                 <p class="format">por Kilogramo</p>
-                <p class="description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum aliquid sunt excepturi sint at deserunt commodi quos recusandae exercitationem assumenda, ipsa, fugit voluptate facilis repudiandae laudantium nisi iure nobis quisquam.</p>
+                <p class="description"> <%= product.description %>></p>
 
             </div>
             <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>

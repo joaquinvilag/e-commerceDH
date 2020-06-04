@@ -4,16 +4,16 @@
         "name": "Ciruelas Desecadas",
         "description": "Ciruelas de alta calidad super mega archinutritivas",
         "price": 1000,
-        "image": "ciruelasdesecadas.jpg",
+        "image": "Frutas_Desecadas/ciruelasdesecadas.jpg",
         "category": "frutas-desecadas",
-        "detail": "lo-mas-vendido"
+        "detail": "mas-vendido"
     },
     {
         "id": 2,
         "name": "Higos Desecados",
         "description": "Higos de alta calidad super mega archinutritivas",
         "price": 1000,
-        "image": "higosdesecados.jpg",
+        "image": "Frutas_Desecadas/higosdesecados.jpg",
         "category": "frutas-desecadas",
         "detail": "oferta"
     },
@@ -22,7 +22,7 @@
         "name": "Pasas de uva",
         "description": "Pasas de uva de alta calidad super mega archinutritivas",
         "price": 1000,
-        "image": "pasasdeuva.jpg",
+        "image": "Frutas_Desecadas/pasasdeuva.jpg",
         "category": "frutas-desecadas",
         "detail": "oferta"
     },
@@ -31,7 +31,7 @@
         "name": "Tomates secos",
         "description": "Tomates secos de alta calidad super mega archinutritivas",
         "price": 1000,
-        "image": "ciruelasdesecadas.jpg",
+        "image": "Frutas_Desecadas/tomatesecos.jpg",
         "category": "frutas-desecadas",
         "detail": "oferta"
     },
@@ -40,25 +40,25 @@
         "name": "Almendras",
         "description": "Almendras de alta calidad super mega archinutritivas",
         "price": 1000,
-        "image": "almendras.jpg",
+        "image": "Frutos_Secos/almendras.jpg",
         "category": "frutos-secos",
-        "detail": "lo-mas-vendido"
+        "detail": "mas-vendido"
     },
     {
         "id": 6,
         "name": "Avellanas",
         "description": "Avellanas de alta calidad super mega archinutritivas",
         "price": 1000,
-        "image": "avellanas.jpg",
+        "image": "Frutos_Secos/avellanas.jpg",
         "category": "frutos-secos",
-        "detail": "oferta"
+        "detail": "mas-vendido"
     },
     {
         "id": 7,
         "name": "Castañas de Caju",
         "description": "Castaña de alta calidad super mega archinutritivas",
         "price": 1000,
-        "image": "castañasdecaju.jpg",
+        "image": "Frutos_Secos/castañasdecaju.jpg",
         "category": "frutos-secos",
         "detail": "oferta"
     },
@@ -67,16 +67,16 @@
         "name": "Nueces",
         "description": "Nueces de alta calidad super mega archinutritivas",
         "price": 1000,
-        "image": "nueces.jpg",
+        "image": "Frutos_Secos/nueces.jpg",
         "category": "frutos-secos",
-        "detail": "lo-mas-vendido"
+        "detail": "mas-vendido"
     },
     {
         "id": 9,
         "name": "Hamburguesas de Garbanzo",
         "description": "Hamburguesas de garbanzo de alta calidad super mega archinutritivas",
         "price": 1000,
-        "image": "Hamburguesasgarbanzos.jpeg",
+        "image": "Hamburguesas/Hamburguesasgarbanzos.jpeg",
         "category": "hamburguesas",
         "detail": "oferta"
     },
@@ -85,7 +85,7 @@
         "name": "Hamburguesas de Lentejas",
         "description": "Hamburguesas de lentejas de alta calidad super mega archinutritivas",
         "price": 1000,
-        "image": "hamburguesaslentejas.jpeg",
+        "image": "Hamburguesas/hamburguesaslentejas.jpeg",
         "category": "hamburguesas",
         "detail": "oferta"
     },
@@ -94,7 +94,7 @@
         "name": "Hamburguesas de Soja",
         "description": "Hamburguesas de soja de alta calidad super mega archinutritivas",
         "price": 1000,
-        "image": "hamburguesassoja.jpg",
+        "image": "Hamburguesas/hamburguesassoja.jpg",
         "category": "hamburguesas",
         "detail": "oferta"
     }

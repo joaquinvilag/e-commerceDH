@@ -205,11 +205,15 @@ nav ul li a{
   .icon_login{
       font-size: 30px;
       margin-bottom: 6px;
+      padding-left: 7px;
   }
   .font_log{
       font-weight: bold;
+      display: inline-block;
   }
-
+  .flex_container_login{
+    margin-top: 14px;
+  }
   
 
 /*=== Menu Options ===*/
@@ -240,11 +244,19 @@ nav ul li a{
       min-width: 200px;
       /* border: 1px solid black; */
   }
-
+  .a_menu_li{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: none;
+  }
   .fa-chevron-down{
       font-size: 14px;
       margin-left: 5px;
       margin-top: 0px;
+      padding-top: 12px;
+      padding-left: 2px;
   }
 
 
@@ -267,10 +279,23 @@ nav ul li a{
       padding-bottom: 7px;
       min-width: 300px;
   }
-
+  .a_menu_li{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: none;
+  }
+  .fa-chevron-down{
+    padding-top: 12px;
+    padding-left: 2px;
+  }
   .icon_login{
       font-size: 38px;
       margin-bottom: 6px;
+  }
+  .flex_container_login{
+    margin-top: 14px;
   }
 } 
 

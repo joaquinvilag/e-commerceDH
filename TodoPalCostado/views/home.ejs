@@ -1,50 +1,72 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-      <%- include('partials/head') %>
-      <link rel="stylesheet" href="/stylesheets/home.css">
-      <title>plantilla de producto - Dietetica</title>
-    </head> 
-    <body>
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/stylesheets/home.css">
+  <title>plantilla de producto - Dietetica</title>
+</head>
+
+<body>
         <!-- ====== Header====== -->
-        <%- include('partials/header.ejs') %>
+  <%- include('partials/header.ejs') %>
         <!-- =================== -->
-        <main>
-          <div class="iso">
-            <img class="iso-img" src="/images/logo/ISOlogo.png" alt="">
-          </div>
-          <div class="banner-titles">
-            <h1 class="title-banner">TODO <br>PAL <br>COSTADO</h1>
-            <h6 class="subtitle-banner">Dietetica de primera calidad </h6>
-          </div>
-        </main> 
+  <main>
+    <div class="iso">
+      <img class="iso-img" src="/images/logo/ISOlogo.png" alt="">
+    </div>
+    <div class="banner-titles">
+      <h1 class="title-banner">TODO <br>PAL <br>COSTADO</h1>
+      <h6 class="subtitle-banner">Dietetica de primera calidad </h6>
+    </div>
 
-        <div class="separador">
-            <h2 class="subtitle">Productos más vendidos</h1>
-        </div>
-        <section>
-        
+    <section class="section_btn_products">
+      <div class="div_btn_products">
+        <a class="a_btn_products" href="/products">Conocé todo lo que tenemos para ti</a>
+      </div>
+    </section>
+  </main> 
+
+  <div class="separador">
+    <h2 class="subtitle">Productos más vendidos</h1>
+  </div>
+  
+  <section>
+    <% pdtosMasVendidos.forEach(function(product){ %> 
+    <article class="product" >
+      <a id="link" href="/products/<%= product.id %>"><img class="productPh" src="/img/<%= product.image %>" alt="ciruelas desecadas"></a>
+      <div class="sliderDots">
+        <a href="" class="sliderDot"></a>
+        <a href="" class="sliderDot"></a>
+        <a href="" class="sliderDot"></a>
+        <a href="" class="sliderDot"></a>
+      </div>
+      <div class="desc">
+        <h1 class="productTitle"><a href="/products/<%= product.id %>"><%= product.name %></a></h1>
+        <p class="price"><%= product.price %></p>
+        <p class="format">por Kilogramo</p>
+        <p class="description"><%= product.description %></p>
+    
+      </div>
+      <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>
+                
+        <a class="btn btn-info" type="button" href="/products/<%= product.id %>" role="button">Más información</a>
+    </article>
+    <% }); %>
+
           
-            <article class="product" >
-              <a id="link" href="/frutasdesecadas/ciruelasdesecadas"><img class="productPh" src="/img/Frutas Desecadas/ciruelasdesecadas.jpg" alt="ciruelas desecadas"></a>
+
+          
+            <!-- <article class="product" >
+              <a id="link" href="/products/frutasdesecadas/ciruelasdesecadas"><img class="productPh" src="/img/Frutas Desecadas/ciruelasdesecadas.jpg" alt="ciruelas desecadas"></a>
                 <div class="sliderDots">
                     <a href="" class="sliderDot"></a>
                     <a href="" class="sliderDot"></a>
                     <a href="" class="sliderDot"></a>
                     <a href="" class="sliderDot"></a>
                 </div>
-                <!--<div class="miniPh">
-                <div>
-                    <img class="mini" src="../Desarrollo/public/img/Frutos Desecados/pasasdeuva.jpg" alt="">
-                </div>
-                <div>
-                    <img class="mini" src="../Desarrollo/public/img/Frutos Desecados/tomatesecos.jpg" alt="">
-                </div>
-                
-                </div>-->
                 <div class="desc">
-                    <h1 class="productTitle"><a href="/frutasdesecadas/ciruelasdesecadas">Ciruelas Desecadas</a></h1>
+                    <h1 class="productTitle"><a href="/products/frutasdesecadas/ciruelasdesecadas">Ciruelas Desecadas</a></h1>
                     <p class="price">$500</p>
                     <p class="format">por Kilogramo</p>
                     <p class="description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum aliquid sunt excepturi sint at deserunt commodi quos recusandae exercitationem assumenda, ipsa, fugit voluptate facilis repudiandae laudantium nisi iure nobis quisquam.</p>
@@ -52,30 +74,21 @@
                 </div>
                 <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>
                 
-                <a class="btn btn-info" type="button" href="/frutasdesecadas/ciruelasdesecadas" role="button">Más información</a>
+                <a class="btn btn-info" type="button" href="/products/frutasdesecadas/ciruelasdesecadas" role="button">Más información</a>
             </article>
           
 
-          
+
             <article class="product" >
-              <a id="link" href="/frutasdesecadas/ciruelasdesecadas"><img class="productPh" src="/img/Frutas Desecadas/ciruelasdesecadas.jpg" alt="ciruelas desecadas"></a>
+              <a id="link" href="/products/frutasdesecadas/ciruelasdesecadas"><img class="productPh" src="/img/Frutas Desecadas/ciruelasdesecadas.jpg" alt="ciruelas desecadas"></a>
                 <div class="sliderDots">
                     <a href="" class="sliderDot"></a>
                     <a href="" class="sliderDot"></a>
                     <a href="" class="sliderDot"></a>
                     <a href="" class="sliderDot"></a>
                 </div>
-                <!--<div class="miniPh">
-                <div>
-                    <img class="mini" src="../Desarrollo/public/img/Frutos Desecados/pasasdeuva.jpg" alt="">
-                </div>
-                <div>
-                    <img class="mini" src="../Desarrollo/public/img/Frutos Desecados/tomatesecos.jpg" alt="">
-                </div>
-                
-                </div>-->
                 <div class="desc">
-                    <h1 class="productTitle"><a href="/frutasdesecadas/ciruelasdesecadas">Ciruelas Desecadas</a></h1>
+                    <h1 class="productTitle"><a href="/products/frutasdesecadas/ciruelasdesecadas">Ciruelas Desecadas</a></h1>
                     <p class="price">$500</p>
                     <p class="format">por Kilogramo</p>
                     <p class="description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum aliquid sunt excepturi sint at deserunt commodi quos recusandae exercitationem assumenda, ipsa, fugit voluptate facilis repudiandae laudantium nisi iure nobis quisquam.</p>
@@ -83,30 +96,19 @@
                 </div>
                 <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>
                 
-                <a class="btn btn-info" type="button" href="/frutasdesecadas/ciruelasdesecadas" role="button">Más información</a>
+                <a class="btn btn-info" type="button" href="/products/frutasdesecadas/ciruelasdesecadas" role="button">Más información</a>
             </article>
           
-
-
             <article class="product" >
-              <a id="link" href="/frutasdesecadas/ciruelasdesecadas"><img class="productPh" src="/img/Frutas Desecadas/ciruelasdesecadas.jpg" alt="ciruelas desecadas"></a>
+              <a id="link" href="/products/frutasdesecadas/ciruelasdesecadas"><img class="productPh" src="/img/Frutas Desecadas/ciruelasdesecadas.jpg" alt="ciruelas desecadas"></a>
                 <div class="sliderDots">
                     <a href="" class="sliderDot"></a>
                     <a href="" class="sliderDot"></a>
                     <a href="" class="sliderDot"></a>
                     <a href="" class="sliderDot"></a>
                 </div>
-                <!--<div class="miniPh">
-                <div>
-                    <img class="mini" src="../Desarrollo/public/img/Frutos Desecados/pasasdeuva.jpg" alt="">
-                </div>
-                <div>
-                    <img class="mini" src="../Desarrollo/public/img/Frutos Desecados/tomatesecos.jpg" alt="">
-                </div>
-                
-                </div>-->
                 <div class="desc">
-                    <h1 class="productTitle"><a href="/frutasdesecadas/ciruelasdesecadas">Ciruelas Desecadas</a></h1>
+                    <h1 class="productTitle"><a href="/products/frutasdesecadas/ciruelasdesecadas">Ciruelas Desecadas</a></h1>
                     <p class="price">$500</p>
                     <p class="format">por Kilogramo</p>
                     <p class="description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum aliquid sunt excepturi sint at deserunt commodi quos recusandae exercitationem assumenda, ipsa, fugit voluptate facilis repudiandae laudantium nisi iure nobis quisquam.</p>
@@ -114,63 +116,31 @@
                 </div>
                 <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>
                 
-                <a class="btn btn-info" type="button" href="/frutasdesecadas/ciruelasdesecadas" role="button">Más información</a>
-            </article>
-          
-            <article class="product" >
-              <a id="link" href="/frutasdesecadas/ciruelasdesecadas"><img class="productPh" src="/img/Frutas Desecadas/ciruelasdesecadas.jpg" alt="ciruelas desecadas"></a>
-                <div class="sliderDots">
-                    <a href="" class="sliderDot"></a>
-                    <a href="" class="sliderDot"></a>
-                    <a href="" class="sliderDot"></a>
-                    <a href="" class="sliderDot"></a>
-                </div>
-                <!--<div class="miniPh">
-                <div>
-                    <img class="mini" src="../Desarrollo/public/img/Frutos Desecados/pasasdeuva.jpg" alt="">
-                </div>
-                <div>
-                    <img class="mini" src="../Desarrollo/public/img/Frutos Desecados/tomatesecos.jpg" alt="">
-                </div>
-                
-                </div>-->
-                <div class="desc">
-                    <h1 class="productTitle"><a href="/frutasdesecadas/ciruelasdesecadas">Ciruelas Desecadas</a></h1>
-                    <p class="price">$500</p>
-                    <p class="format">por Kilogramo</p>
-                    <p class="description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum aliquid sunt excepturi sint at deserunt commodi quos recusandae exercitationem assumenda, ipsa, fugit voluptate facilis repudiandae laudantium nisi iure nobis quisquam.</p>
-    
-                </div>
-                <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>
-                
-                <a class="btn btn-info" type="button" href="/frutasdesecadas/ciruelasdesecadas" role="button">Más información</a>
-            </article>
-          
+                <a class="btn btn-info" type="button" href="/products/frutasdesecadas/ciruelasdesecadas" role="button">Más información</a>
+            </article> -->
+  </section>
+  
+  <section class="categoria-img-left">
+    <div class="cat-img">
+      <img src="/img/Frutas_Desecadas/tomatesecos.jpg" alt="frutas desecadas">
+    </div>
+    <div class="title-cat">
+      <h3>Frutas Desecadas</h3>
+      <button type="button" class="btn btn-info">Más información</button>
+    </div>
 
-      
-            
-      </section>
-      <section class="categoria-img-left">
-        <div class="cat-img">
-          <img src="/img/Frutas Desecadas/tomatesecos.jpg" alt="frutas desecadas">
-        </div>
-        <div class="title-cat">
-          <h3>Frutas Desecadas</h3>
-          <button type="button" class="btn btn-info">Más información</button>
-        </div>
-
-      </section>
-      <section class="video-home">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/KdXNZx4C09o?start=100" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </section>
+  </section>
+  <section class="video-home">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KdXNZx4C09o?start=100" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </section>
 
 
 
     <!--====== Footer =======-->
-    <%- include('partials/footer') %>
+  <%- include('partials/footer') %>
     <!--===== End Footer =======-->
 
-    <%- include('partials/bootstrap-jq-poppers') %>
-  </body>
+  <%- include('partials/bootstrap-jq-poppers') %>
+</body>
 
 </html>
