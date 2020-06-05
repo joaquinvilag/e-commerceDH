@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('partials/head') %>
-    <title>Carga de productos (ADMIN)</title>
+    <title>Editar <%= product.name %> (ADMIN)</title>
     <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;400&display=swap" rel="stylesheet">
     <style type="text/css">
         body {
@@ -120,18 +120,18 @@
     <!-- =================== -->
    <section class="section-add-product">
         <div class="add-product-header">
-            <h3 class="form-titulo">Formulario de carga de productos</h3>
+            <h3 class="form-titulo">Editar <%= product.name %></h3>
         </div>
 
         <div class="div-form-add-product">    
-            <form class="form-add-product" class="style-1" action="/products/create" method="POST"> 
+            <form class="form-add-product" class="style-1" action="/products/<%=product.id%>?_method=PUT" method="POST"> 
                 <div class="addproduct-type">       
-                    <label for="name" class="label-add-product"> Ingresar nombre de producto: </label>
-                    <input type="text" id="name" name="name" placeholder="Ingresar producto" class="input-1">
+                    <label for="name" class="label-add-product"> Nombre de producto: </label>
+                    <input type="text" id="name" name="name" value="<%=product.name%>" placeholder="Ej: Samsung s10" class="input-1">
                 </div>
                 <div class="addproduct-type">
                     <label for="price" class="label-add-product"> Precio del producto:</label>
-                    <input type="text" id="price" name="price" placeholder="Ingresar precio " class="input-1">
+                    <input type="text" id="price" name="price" value="<%=product.price%>" placeholder="Ej: 10000" class="input-1">
                 </div>
                 <div class="addproduct-type">
                     <label for="category" class="label-add-product"> Categoria:</label>
@@ -151,8 +151,8 @@
                     </select>
                 </div>
                 <div class="addproduct-type">
-                    <label class="label-add-product"> Descrición de producto:</label>
-                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                    <label class="label-add-product"> Descripción de producto:</label>
+                    <textarea name="description" id="description" value="<%=product.description%>" class="input-1"></textarea>
                 </div>
                 <div class="addproduct-type">
                     <button type="submit" class="btn-enviar">Guardar producto</button>
