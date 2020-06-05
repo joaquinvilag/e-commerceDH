@@ -7,6 +7,7 @@ const usersController = require('../controllers/usersController');
 //ruta de usuario (registro/login)
 
 router.get('/login', usersController.showLoginForm);
+router.post('/login', usersController.processLoginForm)
 
 router.get('/register',usersController.showRegisterForm);
 router.post('/register',usersController.processRegisterForm);

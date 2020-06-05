@@ -11,7 +11,7 @@
         <!-- ===============   -->
     
     <section class="sec_form_register">
-        <form class="div-form-register">
+        <form method="POST" class="div-form-register">
             <div class="div_form_register">
                 <h4 class="h4_menu_register">
                     <a class="a-form-register off-btn" href="/users/login">Iniciar Sesión</a>
@@ -20,21 +20,21 @@
                     <a class="a-form-register" href="#">Registrarse</a>
                 </h4>
             </div>
-            <form action="" class="form_register_date">
+            <form  action="/users/register" method="POST" class="form_register_date">
                 <div class="group_form_register">
-                    <input type="text" class="field_form_register" required><span class="barra"></span>
+                    <input type="text" class="field_form_register" name="name" required><span class="barra"></span>
                     <label>Nombre</label><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="email" class="field_form_register" required><span class="barra"></span>
+                    <input type="email" class="field_form_register" name="email" required><span class="barra"></span>
                     <label>Email</label><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="password" class="field_form_register" required><span class="barra"></span>
+                    <input type="password" class="field_form_register" name="password" required><span class="barra"></span>
                     <label class="label_form_register">Contraseña</label class="label_form_register"><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="password" class="field_form_register" required><span class="barra"></span>
+                    <input type="password" class="field_form_register" name="confirm-password" required><span class="barra"></span>
                     <label class="label_form_register">Confirmar contraseña</label><br>
                 </div>
         

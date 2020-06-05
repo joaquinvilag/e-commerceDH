@@ -10,7 +10,7 @@
     <%- include('partials/header.ejs') %>
         <!-- ===============   -->
     <section class="sec_form_register">
-        <form class="div-form-register">
+        <form method="POST" class="div-form-register">
             <div class="div_form_register">
                 <h4 class="h4_menu_register">
                     <a class="a-form-register" href="#">Iniciar Sesión</a>
@@ -19,14 +19,14 @@
                   <a class="a-form-register off-btn" href="/users/register">Registrarse</a>
                 </h4>
             </div>
-            <form action="" class="form_register_date">
+            <form action="/users/login" method="POST" class="form_register_date">
                 <!-- <div class="div_form_input"> -->
                 <div class="group_form_register">
-                    <input type="email" class="field_form_register" required><span class="barra"></span>
+                    <input type="email" class="field_form_register" name="email" required><span class="barra"></span>
                     <label class="label_form_register">Email</label><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="password" class="field_form_register" required><span class="barra"></span>
+                    <input type="password" class="field_form_register" name="password" required><span class="barra"></span>
                     <label class="label_form_register">Contraseña</label><br>
                 </div>
                 <br>
