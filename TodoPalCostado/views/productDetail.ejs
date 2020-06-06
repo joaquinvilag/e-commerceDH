@@ -20,6 +20,7 @@
                         <a href="#" class="sliderDot"></a>
                         <a href="#" class="sliderDot"></a>
                         <a href="#" class="sliderDot"></a>
+                        
                     </div>
                 </div>
             </div>
@@ -39,7 +40,15 @@
                 <p class="description"> <%= product.description %>></p>
 
             </div>
-            <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>
+              <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>
+            
+            <div>
+              <a href="/products/<%=product.id%>/edit" class="a-btn-act"><button type="button" class="btn btn-outline-success"><i class="fas fa-edit btn-edit"></i></button></a>
+            </div>
+
+            <form action="/products/<%=product.id%>/delete?_method=DELETE" method="POST" >
+              <button type="submit" class="btn btn-outline-success"><i class="fas fa-trash-alt btn-delete"></i>
+            </form>
                 
           </article>
           
