@@ -18,7 +18,7 @@ const userControllers = {
     };
     for ( let i= 0; i < usuariosJS.length; i++){
         if( req.body.email == usuariosJS[i].email && bcrypt.compareSync( req.body.password, usuariosJS[i].password)){
-            res.send("Éxito!");
+            res.redirect("http://localhost:3000/");
         }else{
             res.send("F");
         };
@@ -45,7 +45,8 @@ const userControllers = {
     usuariosJSON = JSON.stringify(usuariosJS);
     fs.writeFileSync("./data/users.JSON", usuariosJSON);
 
-    console.log("No lo sé, tu dime!")
+    console.log("No lo sé, tu dime!");
+    res.redirect("http://localhost:3000/");
     }
 }
 
