@@ -1,5 +1,19 @@
 var express = require('express');
 var router = express.Router();
+const multer = require('multer');
+let path = require('path');
+
+var storage = multer.diskStorage({
+    destination: function (req , file , cb){
+        cb(null,'tmp/avatares')
+    },
+    filename: function (req , file , cb){
+        cb(null, file.fieldname + 'avatar' + Date.now() + path.extname(file.originalname))
+        
+    }
+});
+
+var upload = multer ({storage:storage});
 
 const usersController = require('../controllers/usersController');
 
@@ -9,7 +23,7 @@ const usersController = require('../controllers/usersController');
 router.get('/login', usersController.showLoginForm);
 router.post('/login', usersController.processLoginForm)
 
-router.get('/register',usersController.showRegisterForm);
-router.post('/register',usersController.processRegisterForm);
+router.get('/register' , usersController.showRegisterForm);
+router.post('/register', upload.any() , usersController.processRegisterForm);
 
 module.exports = router;

@@ -37,7 +37,8 @@ const userControllers = {
     let usuario = {
         name: req.body.name,
         password: password,
-        email: req.body.email
+        email: req.body.email,
+        avatar: req.files[0].filename
     };
     console.log(usuario)
     
