@@ -11,7 +11,7 @@
         <!-- ===============   -->
     
     <section class="sec_form_register">
-        <form method="POST" class="div-form-register">
+        <form method="POST" class="div-form-register" enctype="multipart/form-data">
             <div class="div_form_register">
                 <h4 class="h4_menu_register">
                     <a class="a-form-register off-btn" href="/users/login">Iniciar Sesión</a>
@@ -28,6 +28,10 @@
                 <div class="group_form_register">
                     <input type="email" class="field_form_register" name="email" required><span class="barra"></span>
                     <label>Email</label><br>
+                </div>
+                <div class="group_form_register">
+                    <input type="file" class="field_form_register" name="avatar" required><span class="barra"></span>
+                    <label class="lb-avatar">Avatar</label><br>
                 </div>
                 <div class="group_form_register">
                     <input type="password" class="field_form_register" name="password" required><span class="barra"></span>
