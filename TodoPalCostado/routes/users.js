@@ -5,7 +5,7 @@ let path = require('path');
 
 var storage = multer.diskStorage({
     destination: function (req , file , cb){
-        cb(null,'tmp/avatares')
+        cb(null,'public/images/users')
     },
     filename: function (req , file , cb){
         cb(null, file.fieldname + 'avatar' + Date.now() + path.extname(file.originalname))

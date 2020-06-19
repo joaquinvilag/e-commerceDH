@@ -47,7 +47,7 @@ const userControllers = {
     fs.writeFileSync("./data/users.JSON", usuariosJSON);
 
     console.log("No lo sé, tu dime!");
-    res.redirect("http://localhost:3000/");
+    res.redirect("/");
     }
 }
 
