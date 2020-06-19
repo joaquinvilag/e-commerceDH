@@ -30,17 +30,27 @@
                     <label>Email</label><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="file" class="field_form_register" name="avatar" required><span class="barra"></span>
-                    <label class="lb-avatar">Avatar</label><br>
-                </div>
-                <div class="group_form_register">
                     <input type="password" class="field_form_register" name="password" required><span class="barra"></span>
                     <label class="label_form_register">Contraseña</label class="label_form_register"><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="password" class="field_form_register" name="confirm-password" required><span class="barra"></span>
-                    <label class="label_form_register">Confirmar contraseña</label><br>
+                    <input type="password" class="field_form_register" name="confirmPassword" required><span class="barra"></span>
+                    <label class="label_form_register">Confirmar contraseña</label>
                 </div>
+                <div>
+                    <input type="file" class="field_form_register" name="avatar" required>
+                    <label class="lb-avatar">Avatar</label><br>
+                </div>
+                <% if (typeof errors != 'undefined'){ %>
+                    <p style="color:red">ERROR</p>
+                    <ul>
+                    <% for (let i = 0; i < errors.length; i++) { %>
+                        <li>
+                            <%= errors[i].msg %>
+                        </li>
+                    <% } %>
+                    </ul>
+                <% } %>
         
                 <div class="center_content_btn_register">
                     <input type="submit" class="btn btn-green" value="Registrar">

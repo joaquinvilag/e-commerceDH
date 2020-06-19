@@ -1,30 +1,35 @@
 const fs = require('fs');
 const path = require('path');
 
-let productsFilePath = path.join(__dirname, "../data/products.json");
-let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+// let productsFilePath = path.join(__dirname, "../data/products.json");
+// let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 
 //rutas de productos
 const controller = {
-    root: function(req, res){
+    root: function(req, res, next){
         res.render("allProducts", { "products": products });
     },
-    detail: function(req, res){
+    detail: function(req, res, next){
+        let productsJSON = fs.readFileSync("./data/users.JSON");
+        let productsJS = JSON.parse(productsJSON);
         let product;
-        products.forEach((idProduct) =>{
+        productsJS.forEach((idProduct) =>{
             if(idProduct.id == req.params.id){
                 product = idProduct;
             }
         });
-        res.render("productDetail", {"product": product});
+        res.render("productDetail", {product});
     },
-    create: function(req, res){
+    create: function(req, res, next){
         res.render("addProduct");
     },
-    store: function(req, res){
+    store: function(req, res, next){
+        let productsJSON = fs.readFileSync("./data/products.JSON");
+        let productsJS = JSON.parse(productsJSON);
         let productId = 1;
-        products.forEach(function(product){
+        let product;
+        productsJS.forEach(function(product){
             if(productId == product.id){
                 productId++;
             };
@@ -38,26 +43,30 @@ const controller = {
             category: req.body.category,
             detail: req.body.detail
         };
-        products.push(product);
-        products = JSON.stringify(products);
-        fs.writeFileSync(productsFilePath, products);
-        res.redirect("/products");
+        productsJS.push(product);
+        productsJSON = JSON.stringify(productsJS);
+        fs.writeFileSync('./data/products.json', productsJSON);
+        return res.redirect("/products/" + productId);
         
     },
-    edit: function(req, res){
+    edit: function(req, res, next){
+        let productsJSON = fs.readFileSync("./data/products.JSON");
+        let productsJS = JSON.parse(productsJSON);
         let product;
 
-        products.forEach((pdto) => {
+        productsJS.forEach((pdto) => {
             if(pdto.id == req.params.id){
                 product = pdto;
             };
             
         });
-        res.render("editProduct", {product});
+        res.render("editProduct", {product: product});
         
     },
-    update: function(req, res){
-        products.forEach((product) => {
+    update: function(req, res, next){
+        let productsJSON = fs.readFileSync("./data/products.JSON");
+        let productsJS = JSON.parse(productsJSON);
+        productsJS.forEach((product) => {
             if(product.id == req.params.id){
                 product.name = req.body.name;
                 product.price = req.body.price;
@@ -65,25 +74,25 @@ const controller = {
                 product.description = req.body.description;
             }
         });
-        products = JSON.stringify(products);
-        fs.writeFileSync(productsFilePath, products);
-
-        res.redirect("/products");
-        
+        productsJSON = JSON.stringify(productsJS);
+        fs.writeFileSync('./data/products.json', productsJSON);
+        res.redirect("/products/" + req.params.id);
+     
     },
-    delete: function(req, res){
+    delete: function(req, res, next){
+        let productsJSON = fs.readFileSync("./data/products.JSON");
+        let productsJS = JSON.parse(productsJSON);
         let i = 1;
-        products = products.filter(product => {
+        productsJS = productsJS.filter(product => {
             return product.id != req.params.id;
         });
-        products.forEach((product) =>{
+        productsJS.forEach((product) =>{
             product.id = i;
             i++;
         });
-        products = JSON.stringify(products);
-        fs.writeFileSync(productsFilePath, products);
-
-        res.redirect("/products");
+        productsJSON = JSON.stringify(productsJS);
+        fs.writeFileSync('./data/products.json', productsJSON);
+        res.redirect('/products');
     }
 }
 

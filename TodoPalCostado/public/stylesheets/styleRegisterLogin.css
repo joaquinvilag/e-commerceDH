@@ -26,7 +26,7 @@
   }
   .div_form_register{
     width: 100%;
-    height: 80px;
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -94,6 +94,10 @@
     box-shadow: 0 0 6px rgb(0, 0, 0);
     cursor: pointer;
   
+  }
+
+  .checkbox-btn{
+    text-align: center;
   }
   
   

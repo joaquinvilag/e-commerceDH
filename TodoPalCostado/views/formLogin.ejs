@@ -30,9 +30,24 @@
                     <label class="label_form_register">Contraseña</label><br>
                 </div>
                 <br>
+                <div class="checkbox-btn">
+                    Recordame
+                    <input type="checkbox" name="recordame" ><br>
+                </div>
+                <% if (typeof errors != 'undefined'){ %>
+                    <p style="color:red">ERROR</p>
+                    <ul>
+                    <% for (let i = 0; i < errors.length; i++) { %>
+                        <li>
+                            <%= errors[i].msg %>
+                        </li>
+                    <% } %>
+                    </ul>
+                <% } %>
                 <br>
                 <br>
-        
+                <br>
+                <br>
                 <div class="center_content_btn_register">
                     <input type="submit" class="btn btn-green" value="Ingresar">
                 </div>
