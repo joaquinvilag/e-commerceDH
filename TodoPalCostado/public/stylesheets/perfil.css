@@ -1,0 +1,347 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.section-1{
+    height: 160px;
+    display: flex;
+    flex-direction: column;    
+}
+
+.section1-p1{
+    height: 32px;
+    margin: 50px 0px 0px 40px;
+    font-size: 28px;   
+}
+.section1-p2{
+    text-decoration: underline;
+    height: 25px;
+    margin: 45px 0px 2px 7px;
+    font-size: 18px;
+}
+.editar-cuenta{
+    display: flex;
+}
+.accountEdit-btn{
+    width: 45px;
+    height: 18px;
+    margin: 45px 0px 2px 33%;
+    border-radius: 6px;
+    
+}
+.section-2{
+    width: 320px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+}
+.section2-p1{
+    max-width: 98%;
+    margin: 5px 0px 0px 5px;
+    padding: 1px 0 0 3px;
+    height: 15%;
+    border: black solid 2px;
+}
+.section2-p2{
+    max-width: 98%;
+    margin: 1px 0px 0px 5px;
+    padding: 1px 0 0 3px;
+    height: 15%;
+    border: black solid 2px;
+}
+.section-3{
+    margin: -80px 0 0 0;
+    width: 320px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+}
+.section3-p1{
+    text-decoration: underline;
+    margin: 15px 0px 5px 5px ;
+    width: 115px;
+    height: 18px;
+    
+}
+.section3-p2{
+    max-width: 98%;
+    margin: 5px 0px -4px 5px;
+    padding: 1px 0 0 3px;
+    height: 15%;
+    border: black solid 2px
+}
+.section3-p3{
+    max-width: 98%;
+    margin: 8px 0px 0px 5px;
+    padding: 1px 0 0 3px;
+    height: 15%;
+    border: black solid 2px
+}
+.section3-p4{
+    max-width: 98%;
+    margin: 5px 0px 0px 5px;
+    padding: 1px 0 0 3px;
+    height: 15%;
+    border: black solid 2px
+
+}
+.editar-usuario{
+    display: flex;
+}
+.userEdit-btn{
+    margin: 15px 0px 5px 33% ;
+    width: 45px;
+    height: 18px;    
+    border-radius: 6px;
+    
+}
+/*
+    media 768px
+*/
+@media(min-width:768px){
+    .container-body{
+        margin: 0;
+    }
+    .section-1{
+        width: 320px;
+        height: 160px;
+        display: flex;
+        flex-direction: column;    
+    }
+    .section1-p1{
+        width: 130px;
+        height: 32px;
+        margin: 50px 0px 0px 40px;
+        font-size: 28px;   
+    }
+    .section1-p2{
+        text-decoration: underline;
+        width: 136px;
+        height: 22px;
+        margin: 45px 0px 2px 7px;
+        font-size: 18px;
+    
+    }
+    .section3-p1{
+        text-decoration: underline;
+    }
+    .accountEdit-btn{
+        width: 45px;
+        height: 18px;
+        margin: 45px 0px 2px 38%;
+        border-radius: 6px;
+        
+    }
+    .userEdit-btn{
+        margin: 15px 0px 5px 44% ;
+        width: 45px;
+        height: 18px;    
+        border-radius: 6px;
+        
+    }
+}
+
+/*
+    media 1024px
+*/
+
+@media(min-width:1024px){
+    .container-body{
+        margin: 0;
+        width: 540px;
+    }
+    .section-1{
+        width: 530px;
+        height: 256px;
+        display: flex;
+        flex-direction: column;    
+    }
+    .section1-p1{
+        width: 185px;
+        height: 105px;
+        margin: 35px 0px 0px 40px;
+        font-size: 40px;   
+    }
+    .section1-p2{
+        text-decoration: underline;
+        width: 187px;
+        height: 30px;
+        margin: 45px 0px 2px 7px;
+        font-size: 28px;
+    
+    }
+    .section-2{
+        width: 530px;
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+    }
+    .section2-p1{
+        max-width: 80%;
+        margin: 10px 0px 0px 8%;
+        padding: 5px 0 0 4px;
+        height: 15%;
+        border: black solid 2px;
+    }
+    .section2-p2{
+        max-width: 80%;
+        margin: 4px 0px 0px 8%;
+        padding: 5px 0 0 4px;
+        height: 15%;
+        border: black solid 2px;
+    }
+    .section-3{
+        width: 530px;
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        font-style: 18px;
+        
+    }
+    .section3-p1{
+        text-decoration: underline;
+        margin: 15px 0px 5px 5px ;
+        width: 199px;
+        height: 34px;
+        font-size: 28px;
+        
+    }
+    .section3-p2{
+        max-width: 80%;
+        margin: 8px 0px -4px 8% ;
+        padding: 6px 0 0 4px;
+        height: 15%;
+        border: black solid 2px
+    }
+    .section3-p3{
+        max-width: 80%;
+        margin: 17px 0px 0px 8% ;
+        padding: 6px 0 0 4px;
+        height: 15%;
+        border: black solid 2px
+    }
+    .section3-p4{
+        max-width: 80%;
+        margin: 11px 0px 0px 8% ;
+        padding: 6px 0 0 4px;
+        height: 15%;
+        border: black solid 2px
+    
+    }
+    .accountEdit-btn{
+        width: 80px;
+        height: 30px;
+        font-size: 16px;
+        margin: 45px 0px 2px 36%;
+        border-radius: 6px;
+        
+    }
+    .userEdit-btn{
+        margin: 15px 0px 5px 34% ;
+        width: 80px;
+        font-size: 16px;
+        height: 30px;    
+        border-radius: 6px;
+}
+/*
+    media 1680
+*/
+@media(min-width:1680px){
+    .container-body{
+        margin: 0;
+        width: 540px;
+    }
+    .section-1{
+        width: 530px;
+        height: 256px;
+        display: flex;
+        flex-direction: column;    
+    }
+    .section1-p1{
+        width: 185px;
+        height: 105px;
+        margin: 35px 0px 0px 40px;
+        font-size: 40px;   
+    }
+    .section1-p2{
+        width: 187px;
+        height: 30px;
+        margin: 45px 0px 2px 7px;
+        font-size: 28px;
+    
+    }
+    .section-2{
+        width: 530px;
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+    }
+    .section2-p1{
+        max-width: 80%;
+        margin: 10px 0px 0px 8%;
+        padding: 5px 0 0 4px;
+        height: 15%;
+        border: black solid 2px;
+    }
+    .section2-p2{
+        max-width: 80%;
+        margin: 4px 0px 0px 8%;
+        padding: 5px 0 0 4px;
+        height: 15%;
+        border: black solid 2px;
+    }
+    .section-3{
+        width: 530px;
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        font-style: 18px;
+        
+    }
+    .section3-p1{
+        margin: 15px 0px 5px 5px ;
+        width: 199px;
+        height: 34px;
+        font-size: 28px;
+        
+    }
+    .section3-p2{
+        max-width: 80%;
+        margin: 8px 0px -4px 8% ;
+        padding: 6px 0 0 4px;
+        height: 15%;
+        border: black solid 2px
+    }
+    .section3-p3{
+        max-width: 80%;
+        margin: 17px 0px 0px 8% ;
+        padding: 6px 0 0 4px;
+        height: 15%;
+        border: black solid 2px
+    }
+    .section3-p4{
+        max-width: 80%;
+        margin: 11px 0px 0px 8% ;
+        padding: 6px 0 0 4px;
+        height: 15%;
+        border: black solid 2px
+    
+    }
+    .accountEdit-btn{
+        width: 80px;
+        height: 30px;
+        font-size: 16px;
+        margin: 45px 0px 2px 36%;
+        border-radius: 6px;
+        
+    }
+    .userEdit-btn{
+        margin: 15px 0px 5px 34% ;
+        width: 80px;
+        font-size: 16px;
+        height: 30px;    
+        border-radius: 6px;
+}

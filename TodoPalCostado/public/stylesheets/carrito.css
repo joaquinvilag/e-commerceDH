@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container{
+    background-color: beige;
+    min-width: 480px;
+    min-height: 100vh;
+}
+
+.header{
+    padding: 1%;
+    display: flex;
+}
+.header-hijo1{
+    display: flex;
+    width: 48%;
+    padding: 1%;
+    justify-content: space-evenly;
+}
+.h-art1{
+    padding-left: 15px;
+    font-family: 'Raleway', sans-serif;
+}
+.h-art2{
+    padding-right: 15px;
+    font-family: 'Raleway', sans-serif;
+}
+.header-hijo2{
+    display: flex;
+    width: 48%;
+    padding: 1%;
+    justify-content: flex-end;
+}
+.h-precio{    
+    padding-left: 7px;
+}
+.body{
+    padding: 1%;
+}
+.b-title{
+    
+    font-family: 'Raleway', sans-serif;
+    padding-top: 2%;
+    padding-left: 45px;
+    font-weight: normal;
+}
+.b-inventario{
+    display: flex;
+    flex-wrap: wrap;    
+    padding: 1%;    
+    width: 98%;
+    justify-content: space-evenly;
+    font-family: 'Raleway', sans-serif;
+
+}
+.b-inventario p{
+    padding-left: 15px;
+}
+.b-precio{
+    display: flex;
+    justify-content: space-between;    
+}
+
+.b-h3{
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+}
+
+.b-total-var{
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+}
+.b-h5{
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    padding-left: 2%;
+}
+.f-cupon{
+    display: flex;
+    padding-left: 2%;
+}
+.p-cupon{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    padding-right: 2px;
+    
+}
+input{
+    padding: 0px 14px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+.btn-enviar{
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+}
+.f-end{
+    display: flex;
+    padding: 15px 20px;
+    justify-content: flex-end;
+}
+.btn-continue{
+    margin-right: 4px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+}
+.btn-checkout{
+    margin-right: 2px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+}
