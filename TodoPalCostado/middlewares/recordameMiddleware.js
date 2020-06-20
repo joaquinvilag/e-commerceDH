@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 function recordameMiddleware(req, res, next){
     next();
 
@@ -19,6 +21,8 @@ function recordameMiddleware(req, res, next){
         };
         req.session.usuarioLogueado = usuarioALoguearse;
     }
+
+    
 }
 
 module.exports = recordameMiddleware;

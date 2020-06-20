@@ -11,7 +11,7 @@ const userControllers = {
     processLoginForm: (req,res,next)=>{
         let usersJSON = fs.readFileSync('./data/users.json', {encoding: 'utf-8'});
         let usersJS;
-        let usuarioALoguearse;
+        var usuarioALoguearse;
         if (usersJSON == "") {
             usersJS = [];
         } else {
@@ -24,6 +24,7 @@ const userControllers = {
                 break;
             }
         };
+        // console.log(usuarioALoguearse);
 
         if(usuarioALoguearse == undefined){
             return res.render('formLogin', {errors: [
@@ -32,12 +33,14 @@ const userControllers = {
         };
 
         req.session.usuarioLogueado = usuarioALoguearse;
-
+        // req.locals.user = usuarioALoguearse;
+        
         if(req.body.recordame != undefined) {
             res.cookie('recordame', usuarioALoguearse.email, {maxAge: 60000})
         };
-
-        res.redirect('/')
+        // Hasta aca todo bien
+        // console.log(usuarioALoguearse.name);
+        res.redirect('/users/perfil')
     },
     showRegisterForm: (req,res,next)=>{
         res.render("formRegister");
@@ -49,7 +52,7 @@ const userControllers = {
             let usersJSON = fs.readFileSync("./data/users.JSON");
             let usersJS = JSON.parse(usersJSON);
             
-            let user = {
+            var user = {
                 name: req.body.name,
                 password: bcrypt.hashSync(req.body.password,10),
                 email: req.body.email,
@@ -60,7 +63,8 @@ const userControllers = {
                 usersJS.push(user);
                 usersJSON = JSON.stringify(usersJS);
                 fs.writeFileSync("./data/users.JSON", usersJSON);
-                res.redirect('/')
+                req.session.usuarioLogueado = user;
+                res.redirect('/users/perfil');
             }
         } else {
             return res.render('formRegister', {errors: errors.errors});
@@ -68,10 +72,30 @@ const userControllers = {
     
     },
     showProfile: function(req,res,next){
-        res.render('users/perfil')
+        let usersJSON = fs.readFileSync('./data/users.json', {encoding: 'utf-8'});
+        let usersJS = JSON.parse(usersJSON);
+        var user;
+        for(var i = 0; i < usersJS.length; i++){
+            if(req.session.usuarioLogueado.email == usersJS[i].email || req.cookies.recordame == usersJS[i].email){
+                user = usersJS[i];
+                break;
+            } 
+        
+        }
+        if(user != undefined){
+            res.render('users/perfil', {user});
+        } else {
+            res.send('Usuario no registrado');
+        }
+        console.log(user);
     },
     showCart: function(req,res,next){
-        res.render('users/carrito')
+        if(req.session.usuarioLogueado != undefined || req.cookies.recordame != undefined){
+            res.render('users/carrito');
+        } else {
+            res.redirect('/');
+        }
+        
     }
 }
 

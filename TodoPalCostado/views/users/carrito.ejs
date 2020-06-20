@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css-carrito2.css">
+    <%- include('../partials/head') %>
+    <!-- <link rel="stylesheet" href="css-carrito2.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/carrito.css">
-    
-    <script src="https://kit.fontawesome.com/5c6145b7dd.js" crossorigin="anonymous"></script>
+    <title>Carrito de compras</title>
+    <!-- <script src="https://kit.fontawesome.com/5c6145b7dd.js" crossorigin="anonymous"></script> -->
 </head>
 <body>
+    <!-- ====== Header====== -->
+    <%- include('../partials/header.ejs') %>
+    <!-- =================== -->
     <div class="main-container">
         <div class="header">
              <section class="header-hijo1">
@@ -52,6 +53,12 @@
             </section>
         </div>
     </div>
+
+    <!--====== Footer =======-->
+    <%- include('../partials/footer') %>
+    <!--===== End Footer =======-->
+
+    <%- include('../partials/bootstrap-jq-poppers') %>
     
 </body>
 </html>

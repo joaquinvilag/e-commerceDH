@@ -8,10 +8,12 @@ const path = require('path');
 //rutas de productos
 const controller = {
     root: function(req, res, next){
-        res.render("allProducts", { "products": products });
+        let productsJSON = fs.readFileSync("./data/products.JSON");
+        let productsJS = JSON.parse(productsJSON);
+        res.render("allProducts", { "products": productsJS });
     },
     detail: function(req, res, next){
-        let productsJSON = fs.readFileSync("./data/users.JSON");
+        let productsJSON = fs.readFileSync("./data/products.JSON");
         let productsJS = JSON.parse(productsJSON);
         let product;
         productsJS.forEach((idProduct) =>{

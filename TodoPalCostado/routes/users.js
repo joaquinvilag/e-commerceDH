@@ -4,6 +4,8 @@ var router = express.Router();
 var multer = require('multer');
 var path = require('path');
 var { check, validationResult, body} = require('express-validator');
+var guestMiddleware = require('../middlewares/guestMiddleware');
+var authMiddleware = require('../middlewares/authMiddleware');
 
 var storage = multer.diskStorage({
     destination: function (req , file , cb){
@@ -22,7 +24,7 @@ const usersController = require('../controllers/usersController');
 /* GET users listing. */
 //ruta de usuario (registro/login)
 
-router.get('/login', usersController.showLoginForm);
+router.get('/login', guestMiddleware, usersController.showLoginForm);
 
 router.post('/login', [
     check('email').isEmail().withMessage('Email invalido'),
@@ -31,7 +33,7 @@ router.post('/login', [
 
 
 
-router.get('/register' , usersController.showRegisterForm);
+router.get('/register', guestMiddleware, usersController.showRegisterForm);
 
 router.post('/register', upload.any(), [
   check('name').isLength({min: 1}).withMessage('Este campo no puede estar vacio'),
@@ -58,8 +60,9 @@ router.post('/register', upload.any(), [
 
 ], usersController.processRegisterForm);
 
- router.get('/perfil',usersController.showProfile);
- router.get('/carrito', usersController.showCart )
-// router.post('/perfil',usersController.processProfile);
+  // Datos de perfil
+ router.get('/perfil', authMiddleware, usersController.showProfile);
+  // Carrito de compras
+ router.get('/carrito', authMiddleware, usersController.showCart );
 
 module.exports = router;
