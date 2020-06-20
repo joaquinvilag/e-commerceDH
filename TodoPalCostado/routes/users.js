@@ -58,7 +58,8 @@ router.post('/register', upload.any(), [
 
 ], usersController.processRegisterForm);
 
-// router.get('/perfil',usersController.showProfile);
+ router.get('/perfil',usersController.showProfile);
+ router.get('/carrito', usersController.showCart )
 // router.post('/perfil',usersController.processProfile);
 
 module.exports = router;

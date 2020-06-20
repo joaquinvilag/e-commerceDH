@@ -66,6 +66,12 @@ const userControllers = {
             return res.render('formRegister', {errors: errors.errors});
         }
     
+    },
+    showProfile: function(req,res,next){
+        res.render('users/perfil')
+    },
+    showCart: function(req,res,next){
+        res.render('users/carrito')
     }
 }
 
