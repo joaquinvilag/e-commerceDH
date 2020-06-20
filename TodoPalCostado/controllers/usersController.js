@@ -27,7 +27,7 @@ const userControllers = {
 
         if(usuarioALoguearse == undefined){
             return res.render('formLogin', {errors: [
-                {msg: 'Datos invalidos'}
+                {msg:'Datos invalidos'}
             ]});
         };
 

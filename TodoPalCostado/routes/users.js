@@ -57,7 +57,8 @@ router.post('/register', upload.any(), [
 
 
 ], usersController.processRegisterForm);
-router.get('/perfil',usersController.showProfile);
-router.post('/perfil',usersController.processProfile);
+
+// router.get('/perfil',usersController.showProfile);
+// router.post('/perfil',usersController.processProfile);
 
 module.exports = router;
