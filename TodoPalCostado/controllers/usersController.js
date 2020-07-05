@@ -1,10 +1,27 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
+var db = require('../database/models');
+var sequelize = db.sequelize;
 let { check, validationResult, body} = require('express-validator');
 
 
 const userControllers = {
+    allUser:(req,res)=>{
+        db.User.findAll()
+        .then(data =>{
+            // console.log(data)            
+            var users = data;
+            return res.render('all-user',{users})
+        })
+        .catch(function(error){console.log(error)})
+    },
+    showUser:(req,res) =>{
+        db.User.findByPk(req.params.id)
+        .then(data=>{
+            return res.send("hola "+data.name)
+        })
+    },
     showLoginForm: (req,res,next)=>{
         res.render("formLogin");
     },

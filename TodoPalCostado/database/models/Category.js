@@ -15,15 +15,13 @@ module.exports = function(sequelize, dataTypes){
         tableName: "category",
         timestamps: false
     }
-    var User = sequelize.define(alias, cols, config);
-    // User.associate = function(models){
-    //     User.belongsToMany(models.Movie,{
-    //         as: "movies",
-    //         through: "actor_movie",
-    //         foreignKey:"actor_id",
-    //         otherKey:"movie_id",
-    //         timestamps: false
-    //     })
-    // }
+    var Category = sequelize.define(alias, cols, config);
+    Category.associate = function(models){
+        Category.hasMany(models.Product,{
+            as: "products",            
+            foreignKey:"FK_category_id",
+            timestamps: false
+        })
+    }
     return Category;
 }

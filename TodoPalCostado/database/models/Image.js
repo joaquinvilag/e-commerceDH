@@ -18,15 +18,6 @@ module.exports = function(sequelize, dataTypes){
         tableName: "images",
         timestamps: false
     }
-    var User = sequelize.define(alias, cols, config);
-    // User.associate = function(models){
-    //     User.belongsToMany(models.Movie,{
-    //         as: "movies",
-    //         through: "actor_movie",
-    //         foreignKey:"actor_id",
-    //         otherKey:"movie_id",
-    //         timestamps: false
-    //     })
-    // }
+    var Image = sequelize.define(alias, cols, config);
     return Image;
 }

@@ -64,5 +64,6 @@ router.post('/register', upload.any(), [
  router.get('/perfil', authMiddleware, usersController.showProfile);
   // Carrito de compras
  router.get('/carrito', authMiddleware, usersController.showCart );
-
+ router.get('/alluser',usersController.allUser);
+ router.get('/alluser/:id', usersController.showUser)
 module.exports = router;

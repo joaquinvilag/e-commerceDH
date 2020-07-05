@@ -13,7 +13,7 @@ module.exports = function(sequelize, dataTypes){
         last_name: {
             type: dataTypes.STRING
         },
-        adress: {
+        address: {
             type: dataTypes.STRING
         },
         phone: {
@@ -36,7 +36,7 @@ module.exports = function(sequelize, dataTypes){
         }
     }
     var config = {
-        tableName: "users",
+        tableName: "user",
         timestamps: false
     }
     var User = sequelize.define(alias, cols, config);
@@ -46,7 +46,11 @@ module.exports = function(sequelize, dataTypes){
             foreignKey:"FK_roll",
             timestamps: false
         })
-        
+        User.belongsTo(models.Cart,{
+            as:"userCart",
+            foreignKey:"iduser",
+            timestamps:false
+        })   
     }
     return User;
 }

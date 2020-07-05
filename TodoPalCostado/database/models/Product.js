@@ -22,9 +22,6 @@ module.exports = function(sequelize, dataTypes){
         images: {
             type: dataTypes.STRING
         },
-        birth_date: {
-            type: dataTypes.DATE
-        },
         price: {
             type: dataTypes.DOUBLE
         }
@@ -34,14 +31,25 @@ module.exports = function(sequelize, dataTypes){
         timestamps: false
     }
     var Product = sequelize.define(alias, cols, config);
-    // User.associate = function(models){
-    //     User.belongsToMany(models.Movie,{
-    //         as: "movies",
-    //         through: "actor_movie",
-    //         foreignKey:"actor_id",
-    //         otherKey:"movie_id",
-    //         timestamps: false
-    //     })
-    // }
-    return Actor;
+    Product.associate = function(models){
+        Product.belongsTo(models.Category,{
+            as: "category",            
+            foreignKey:"FK_category_id",
+            timestamps: false
+        })
+        Product.hasMany(models.Image,{
+            as:"img",
+            foreignKey:"FK_product_id",
+            timestamps: false
+        })
+    
+        Product.belongsToMany(models.Cart,{
+            as: "cart",
+            through: "cart_products",
+            foreignKey:"FK_products_id",
+            otherKey:"FK_cart_id ",
+            timestamps: false
+        })
+    }
+    return Product;
 }

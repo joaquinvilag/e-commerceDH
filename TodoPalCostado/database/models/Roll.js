@@ -14,7 +14,7 @@ module.exports = function(sequelize, dataTypes){
         tableName: "roll",
         timestamps: false
     }
-    var User = sequelize.define(alias, cols, config);
+    var Roll = sequelize.define(alias, cols, config);
     Roll.associate = function(models){
         Roll.hasMany(models.User,{
             as: "roll_user",

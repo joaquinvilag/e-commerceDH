@@ -25,14 +25,20 @@ module.exports = function(sequelize, dataTypes){
         timestamps: false
     }
     var Cart = sequelize.define(alias, cols, config);
-    // User.associate = function(models){
-    //     User.belongsToMany(models.Movie,{
-    //         as: "movies",
-    //         through: "actor_movie",
-    //         foreignKey:"actor_id",
-    //         otherKey:"movie_id",
-    //         timestamps: false
-    //     })
-    // }
+    Cart.associate = function(models){
+        Cart.belongsTo(models.User,{
+            as: "user",
+            foreignKey:"FK_user_id",
+            timestamps: false
+        })
+        Cart.belongsToMany(models.Product,{
+            as:"product",
+            through:"cart_products",
+            foreignKey:"FK_cart_id",
+            otherKey:"FK_products_id",
+            timestamps: false            
+        })
+
+    }
     return Cart;
 }
