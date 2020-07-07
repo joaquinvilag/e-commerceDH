@@ -13,32 +13,134 @@
     <%- include('../partials/header.ejs') %>
     <!-- =================== -->
     <div class="main-container">
-        <div class="header">
-             <section class="header-hijo1">
-                 <p class="h-art1"> Carrito </p>
-                 <p class="h-art2"> Ahorre dinero</p>
-             </section>
-             <section class="header-hijo2">
-                 <i class="fas fa-shopping-cart"></i><span class="h-precio">item+precio</span>
-             </section>
-            
-        </div>        
-        <div class="body">
-            <h2 class="b-title">Tu carrito de compras</h1>
-            <section class="b-inventario">
-                <p class="img">Detalle</p>
-                <p class="product">Producto</p>
-                <p class="quantity">Cantidad</p>
+        <div>
+            <div class="container">
+                <div class="heading">
+                  <h1>
+                    <span class="shopper">Tu carrito de compras</span> 
+                  </h1>
+                </div>
                 
-                <p class="unite-price">Precio Unitario</p>
-                <p class="price">Precio</p>
-            </section>
-            <section class="b-precio">
-                    <h3 class="b-h3">Total</h3>
-                    <p class="b-total-var">precio%total</p>          
-            </section>
+                <div class="cart transition is-open">
+                  
+                  <a href="#" class="btn btn-update">Pagar</a>
+                  
+                  
+                  <div class="table">
+                    
+                    <div class="layout-inline row th">
+                      <div class="col col-pro">Product</div>
+                      <div class="col col-price align-center "> 
+                        Price
+                      </div>
+                      <div class="col col-qty align-center">QTY</div>
+                      <div class="col">VAT</div>
+                      <div class="col">Total</div>
+                    </div>
+                    
+                    <div class="layout-inline row">
+                      
+                      <div class="col col-pro layout-inline">
+                        <img src="http://static.ddmcdn.com/gif/10-kitten-cuteness-1.jpg" alt="kitten" />
+                        <p>Happy Little Critter</p>
+                      </div>
+                      
+                      <div class="col col-price col-numeric align-center ">
+                        <p>£59.99</p>
+                      </div>
+              
+                      <div class="col col-qty layout-inline">
+                        <a href="#" class="qty qty-minus">-</a>
+                          <input type="numeric" value="3" />
+                        <a href="#" class="qty qty-plus">+</a>
+                      </div>
+                      
+                      <div class="col col-vat col-numeric">
+                        <p>£2.95</p>
+                      </div>
+                      <div class="col col-total col-numeric">               <p> £182.95</p>
+                      </div>
+                    </div>
+                    
+                    <div class="layout-inline row row-bg2">
+              
+                      <div class="col col-pro layout-inline">
+                        <img src="http://lovemeow.com/wp-content/uploads/2012/05/kitten81.jpg" alt="kitten" />
+                        <p>Scared Little Kittie</p>
+                      </div>
+                      
+                      <div class="col col-price col-numeric align-center ">
+                        <p>£23.99</p>
+                      </div>
+              
+                      <div class="col col-qty  layout-inline">
+                        <a href="#" class="qty qty-minus ">-</a>
+                          <input type="numeric" value="1" />
+                        <a href="#" class="qty qty-plus">+</a>
+                      </div>
+                      
+                      <div class="col col-vat col-numeric">
+                        <p>£1.95</p>
+                      </div>
+                      <div class="col col-total col-numeric">
+                        <p>£25.94</p>
+                      </div>      
+                    
+                    </div>
+                    
+                     <div class="layout-inline row">
+                      
+                      <div class="col col-pro layout-inline">
+                        <img src="http://cdn.cutestpaw.com/wp-content/uploads/2012/04/l-my-first-kitten.jpg" alt="kitten" />
+                        <p>Curious Little Begger</p>
+                      </div>
+                      
+                      <div class="col col-price col-numeric align-center ">
+                        <p>£59.99</p>
+                      </div>
+              
+                      <div class="col col-qty layout-inline">
+                        <a href="#" class="qty qty-minus">-</a>
+                          <input type="numeric" value="3" />
+                        <a href="#" class="qty qty-plus">+</a>
+                      </div>
+                      
+                      <div class="col col-vat col-numeric">
+                        <p>£2.95</p>          
+                      </div>
+                       <div class="col col-total col-numeric">  
+                         <p>£182.95</p>
+                       </div>         
+                    </div>
+                
+                     <div class="tf">
+                       <div class="row layout-inline">
+                         <div class="col">
+                           <p>VAT</p>
+                         </div>
+                         <div class="col"></div>
+                       </div>
+                       <div class="row layout-inline">
+                         <div class="col">
+                           <p>Shipping</p>
+                         </div>
+                         <div class="col"></div>
+                       </div>
+                        <div class="row layout-inline">
+                         <div class="col">
+                           <p>Total</p>
+                         </div>
+                         <div class="col"></div>
+                       </div>
+                     </div>         
+                </div>
+                  
+                  <a href="#" class="btn btn-update">Pagar</a>
+                
+              </div>
         </div>
-        <div class="footer">
+
+        <!-- <div class="footer">
             <h5 class="b-h5">Usar cupón</h4>
             <div class="f-cupon">
                 <p class="p-cupon">Cupón:</p>
@@ -51,7 +153,7 @@
 
 
             </section>
-        </div>
+        </div> -->
     </div>
 
     <!--====== Footer =======-->
@@ -59,6 +161,8 @@
     <!--===== End Footer =======-->
 
     <%- include('../partials/bootstrap-jq-poppers') %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/javascripts/cart-event.js"></script>
     
 </body>
 </html>

@@ -1,120 +1,239 @@
-*{
+html {
+    background: #bbc3c6;
+    font: 62.5%/1.5em "Trebuchet Ms", helvetica;
+  }
+  
+  * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.main-container{
-    background-color: beige;
-    min-width: 480px;
-    min-height: 100vh;
-}
-
-.header{
-    padding-top: -6px;
-    display: flex;
-    background-color: #4DEBBE;
-    border-top: #5C4C44 solid 2px;
-    border-bottom: #5C4C44 solid 2px;
-}
-.header-hijo1{
-    display: flex;
-    width: 48%;
-    padding: 1%;
-    justify-content: space-evenly;
-}
-.h-art1{
-    padding-left: 15px;
-    font-family: 'Raleway', sans-serif;
-}
-.h-art2{
-    padding-right: 15px;
-    font-family: 'Raleway', sans-serif;
-}
-.header-hijo2{
-    display: flex;
-    width: 48%;
-    padding: 1%;
-    justify-content: flex-end;
-}
-.h-precio{    
-    padding-left: 7px;
-}
-.body{
-    padding: 1%;
-}
-.b-title{
-    
-    font-family: 'Raleway', sans-serif;
-    padding-top: 2%;
-    margin-bottom: 12px;
-    text-decoration: underline;
-    padding-left: 45px;
-    font-weight: normal;
-}
-.b-inventario{
-    display: flex;
-    flex-wrap: wrap;    
-    padding: 1%;    
-    width: 98%;
-    justify-content: space-evenly;
-    font-family: 'Raleway', sans-serif;
-
-}
-.b-inventario p{
-    padding-left: 15px;
-}
-.b-precio{
-    display: flex;
-    justify-content: space-between;    
-}
-
-.b-h3{
-    font-family: 'Raleway', sans-serif;
-    font-weight: normal;
-}
-
-.b-total-var{
-    font-family: 'Raleway', sans-serif;
-    font-weight: normal;
-}
-.b-h5{
-    font-family: 'Raleway', sans-serif;
-    font-weight: normal;
-    padding-left: 2%;
-}
-.f-cupon{
-    display: flex;
-    padding-left: 2%;
-}
-.p-cupon{
-    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  @font-face {
+      font-family: 'Shopper';
+      src: url('http://www.shopperfont.com/font/Shopper-Std.ttf');
+  }
+  
+  .shopper {
+    text-transform: lowercase;
+    font: 2em 'Shopper', sans-serif;
+    line-height: 0.5em;
+    display: inline-block;
+  }
+  
+  
+  
+  h1 {
+    text-transform: uppercase;
     font-weight: bold;
-    font-size: 14px;
-    padding-right: 2px;
+    font-size: 2.5em;
+  }
+  
+  p {
+    font-size: 1.5em;
+    color: #8a8a8a;
+  }
+  
+  input {
+    border: 0.3em solid #bbc3c6;
+    padding: 0.5em 0.3em; 
+    font-size: 1.4em;
+    color: #8a8a8a;
+    text-align: center;
+  }
+  
+  img {
+    max-width: 9em;
+    width: 100%;
+    overflow: hidden; 
+    margin-right: 1em;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .container {
+    max-width: 75em;
+    width: 95%;
+    margin: 40px auto;  
+    overflow: hidden;
+    position: relative;
     
-}
-input{
-    padding: 0px 14px;
-    font-size: 14px;
-    border-radius: 3px;
-}
-.btn-enviar{
-    font-family: 'Raleway', sans-serif;
-    font-weight: normal;
-}
-.f-end{
-    display: flex;
-    padding: 15px 20px;
-    justify-content: flex-end;
-}
-.btn-continue{
-    margin-right: 4px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: normal;
-}
-.btn-checkout{
-    margin-right: 2px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: normal;
-}
+    border-radius: 0.6em;
+    background: #ecf0f1;
+    box-shadow: 0 0.5em 0 rgba(138, 148, 152, 0.2);
+  }
+  
+  .heading {
+    padding: 1em;
+    position: relative;
+    z-index: 1;
+    color: #f7f7f7;
+    background: rgb(77, 235, 190);
+  }
+  
+  .cart {
+    margin: 2.5em;
+    overflow: hidden;
+  }
+  
+  .cart.is-closed {
+    height: 0;
+    margin-top: -2.5em;
+  }
+  
+  .table {
+    background: #ffffff;
+    border-radius: 0.6em;
+    overflow: hidden;
+    clear: both;
+    margin-bottom: 1.8em;
+  }
+  
+  
+  .layout-inline > * {
+    display: inline-block;
+  }
+  
+  .align-center {
+    text-align: center;
+  }
+  
+  .th {
+    background: rgb(77, 235, 190);
+    color: rgb(7, 7, 7.15, 14, 14);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  
+  .tf {
+    background: rgb(77, 235, 190);
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 1.2em;  
+  }
+  
+  .tf p {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+  }
+  
+  .col {
+    padding: 1em;
+    width: 12%;
+  }
+  
+  .col-pro {
+    width: 44%;
+  }
+  
+  .col-pro > * {
+    vertical-align: middle;
+  }
+  
+  .col-qty {
+    text-align: center;
+    width: 17%;
+  }
+  
+  .col-numeric p {
+    font: bold 1.8em helvetica;
+  }
+  
+  .col-total p {
+    color: #12c8b1;
+  }
+  
+  .tf .col {
+    width: 20%;
+  }
+  
+  .row > div {
+    vertical-align: middle;
+  }
+  
+  .row-bg2 {
+    background: #f7f7f7;
+  }
+  
+  .visibility-cart {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 0.5em;
+    right: 0.5em;
+    font:  bold 2em arial;
+    border: 0.16em solid #fff;
+    border-radius: 2.5em;
+    padding: 0 0.22em 0 0.25em ;
+  }
+  
+  .col-qty > * {
+    vertical-align: middle; 
+  }
+  
+  .col-qty > input {
+    max-width: 2.6em;
+  }
+  
+  
+  a.qty {
+    width: 1em;
+    line-height: 1em;
+    border-radius: 2em;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    background: #43ace3;  
+    color: #fff;
+  }
+  
+  a.qty:hover {
+    background: #3b9ac6;
+  }
+  
+  .btn {
+    padding: 10px 30px;
+    border-radius: 0.3em;
+    font-size: 1.4em;
+    font-weight: bold;
+    background: #43ace3;
+    color: #fff;
+    box-shadow: 0 3px 0 rgba(59,154,198, 1)
+  }
+  
+  .btn:hover {
+    box-shadow: 0 3px 0 rgba(59,154,198, 0)
+  }
+  
+  .btn-update {
+    float: right;
+    margin: 0 0 1.5em 0;
+  }
+  
+  .transition {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  @media screen and ( max-width: 755px) {
+    .container {
+      width: 98%;
+    }
+    
+    .col-pro {
+      width: 35%;
+    }
+    
+    .col-qty {
+      width: 22%;
+    }
+    
+    img {
+      max-width: 100%;
+      margin-bottom: 1em;
+    }
+  }
+  
+  @media screen and ( max-width: 591px) {
+    
+  }

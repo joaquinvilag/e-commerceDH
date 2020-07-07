@@ -25,6 +25,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret: 'secret'}));
 app.use(methodOverride('_method'));
 app.use(recordameMiddleware);
+app.use(function(req, res, next){
+  if(req.session.usuarioLogueado){
+    res.locals.user = req.session.usuarioLogueado;
+  } else {
+    res.locals.user = undefined;
+  }
+  next();
+});
 
 
 

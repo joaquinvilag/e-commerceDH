@@ -28,7 +28,7 @@ module.exports = function(sequelize, dataTypes){
         password: {
             type: dataTypes.STRING
         },
-        FK_roll: {
+        admin: {
             type: dataTypes.INTEGER
         },
         avatar: {
@@ -41,11 +41,6 @@ module.exports = function(sequelize, dataTypes){
     }
     var User = sequelize.define(alias, cols, config);
     User.associate = function(models){
-        User.belongsTo(models.Roll,{
-            as: "user_roll",
-            foreignKey:"FK_roll",
-            timestamps: false
-        })
         User.belongsTo(models.Cart,{
             as:"userCart",
             foreignKey:"iduser",

@@ -54,11 +54,21 @@
         </div>
         <div class="flex_container_login">
             <div class="flex_items_login">
+            <% if(typeof user != 'undefined'){ %>
+                <a href="/users/perfil" class="font_log">
+                    <i class="fas fa-user-circle icon_login"></i>
+                    <br>
+                    <p><%=user.name%></p>
+                </a>
+
+            <% } else { %>
                 <a href="/users/login" class="font_log">
                     <i class="fas fa-user-circle icon_login"></i>
                     <br>
                     <p>Login</p>
                 </a>
+            <% } %>
+                
             </div>
             <div class="flex_items_login">
                 <a href="/users/carrito" class="font_log">
@@ -99,6 +109,6 @@
 
 </header>
 
-
+ 
 
 

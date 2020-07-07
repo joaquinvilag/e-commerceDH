@@ -22,25 +22,32 @@
             </div>
             <form  action="/users/register" method="POST" class="form_register_date">
                 <div class="group_form_register">
-                    <input type="text" class="field_form_register" name="name" required><span class="barra"></span>
+                    <input type="text" class="field_form_register" name="name"><span class="barra"></span>
                     <label>Nombre</label><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="email" class="field_form_register" name="email" required><span class="barra"></span>
+                    <input type="text" class="field_form_register" name="last_name"><span class="barra"></span>
+                    <label>Apellido</label><br>
+                </div>
+                <div class="group_form_register">
+                    <input type="email" class="field_form_register" name="email"><span class="barra"></span>
                     <label>Email</label><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="password" class="field_form_register" name="password" required><span class="barra"></span>
+                    <input type="password" class="field_form_register" name="password"><span class="barra"></span>
                     <label class="label_form_register">Contraseña</label class="label_form_register"><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="password" class="field_form_register" name="confirmPassword" required><span class="barra"></span>
+                    <input type="password" class="field_form_register" name="confirmPassword"><span class="barra"></span>
                     <label class="label_form_register">Confirmar contraseña</label>
                 </div>
                 <div>
-                    <input type="file" class="field_form_register" name="avatar" required>
+                    <input type="file" class="field_form_register" name="avatar">
                     <label class="lb-avatar">Avatar</label><br>
                 </div>
+                   
+
+
                 <% if (typeof errors != 'undefined'){ %>
                     <p style="color:red">ERROR</p>
                     <ul>
