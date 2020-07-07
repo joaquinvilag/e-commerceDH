@@ -124,7 +124,7 @@
         </div>
 
         <div class="div-form-add-product">    
-            <form class="form-add-product" class="style-1" action="/products/<%=product.id%>?_method=PUT" method="POST"> 
+            <form class="form-add-product" class="style-1" action="/products/<%=product.idproducts%>?_method=PUT" method="POST"> 
                 <div class="addproduct-type">       
                     <label for="name" class="label-add-product"> Nombre de producto: </label>
                     <input type="text" id="name" name="name" value="<%=product.name%>" placeholder="Ej: Samsung s10" class="input-1">
@@ -137,9 +137,9 @@
                     <label for="category" class="label-add-product"> Categoria:</label>
                     <select id="category" name="category" class="input-1">
                         <option value="">Elige una opción</option>
-                        <option value="frutos-secos">Frutos Secos</option>
-                        <option value="frutas-desecadas">Frutas Desecadas</option>
-                        <option value="hamburguesas">Hamburguesas</option>
+                        <option value="1">Frutos Secos</option>
+                        <option value="2">Frutas Desecadas</option>
+                        <option value="3">Hamburguesas</option>
                     </select>
                 </div>
                 <div class="addproduct-type">
@@ -152,7 +152,7 @@
                 </div>
                 <div class="addproduct-type">
                     <label class="label-add-product"> Descripción de producto:</label>
-                    <textarea name="description" id="description" value="<%=product.description%>" class="input-1"></textarea>
+                    <textarea name="descr" id="descr" value="<%=product.descr%>" class="input-1"></textarea>
                 </div>
                 <div class="addproduct-type">
                     <button type="submit" class="btn-enviar">Guardar producto</button>

@@ -23,12 +23,13 @@
          .add-product-header {
             width: 100%;
             margin-top: 30px;
-            background-color: #51ffc5;
+            background-color: #59ecbba6;
             font-size: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             border: 10px;
+            box-shadow: 0px 0px 5px black;
             /* margin-bottom: 40px; */
          }
          .form-titulo{
@@ -39,7 +40,7 @@
             padding-top: 20px;
             margin-top: 30px;
             width: 100%;
-            height: 600px;
+            height: 800px;
             background-color:#E5E5E5 ;
             font-size: 18px;
             display: flex;
@@ -47,6 +48,7 @@
             justify-content: center;
             flex-wrap: wrap;
             border-radius: 5px;
+            box-shadow: 0px 0px 5px black;
             
          }
          .form-add-product{
@@ -87,7 +89,7 @@
              padding: 10px 40px;
              border-radius: 5px;
              background: #6be0a0;
-             color: rgba(97, 97, 97, 0.664) ;
+             color: rgb(97, 97, 97) ;
          }
          @media(max-width: 425px){
             .section-add-product{
@@ -137,9 +139,9 @@
                     <label for="category" class="label-add-product"> Categoria:</label>
                     <select id="category" name="category" class="input-1">
                         <option value="">Elige una opción</option>
-                        <option value="frutos-secos">Frutos Secos</option>
-                        <option value="frutas-desecadas">Frutas Desecadas</option>
-                        <option value="hamburguesas">Hamburguesas</option>
+                        <option value="1">Frutos Secos</option>
+                        <option value="2">Frutas Desecadas</option>
+                        <option value="3">Hamburguesas</option>
                     </select>
                 </div>
                 <div class="addproduct-type">
@@ -152,7 +154,10 @@
                 </div>
                 <div class="addproduct-type">
                     <label class="label-add-product"> Descrición de producto:</label>
-                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                    <textarea name="descr" id="descr" cols="30" rows="10"></textarea>
+                </div>
+                <div class="addproduct-type">
+                    <input type="file" class="label-add-product" name="images" id="images">
                 </div>
                 <div class="addproduct-type">
                     <button type="submit" class="btn-enviar">Guardar producto</button>

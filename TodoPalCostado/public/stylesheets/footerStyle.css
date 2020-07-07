@@ -5,11 +5,8 @@
 }
 footer{
     width: 100%;
-<<<<<<< HEAD
     /* max-width: 1600px; */
-=======
->>>>>>> 9aa258ce25c6d28501a9aeded8f9c48759c90577
-    background-color: #E5E5E5;
+    background-color: #e5e5e56b;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

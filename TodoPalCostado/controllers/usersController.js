@@ -8,21 +8,21 @@ const { brotliDecompress } = require('zlib');
 
 
 const userControllers = {
-    allUser:(req,res)=>{
-        db.User.findAll()
-        .then(data =>{
-            // console.log(data)            
-            var users = data;
-            return res.render('all-user',{users})
-        })
-        .catch(function(error){console.log(error)})
-    },
-    showUser:(req,res) =>{
-        db.User.findByPk(req.params.id)
-        .then(data=>{
-            return res.send("hola "+data.name)
-        })
-    },
+    // allUser:(req,res)=>{
+    //     db.User.findAll()
+    //     .then(data =>{
+    //         // console.log(data)            
+    //         var users = data;
+    //         return res.render('all-user',{users})
+    //     })
+    //     .catch(function(error){console.log(error)})
+    // },
+    // showUser:(req,res) =>{
+    //     db.User.findByPk(req.params.id)
+    //     .then(data=>{
+    //         return res.send("hola "+data.name)
+    //     })
+    // },
     showLoginForm: (req,res,next)=>{
         res.render("formLogin");
     },
@@ -49,6 +49,8 @@ const userControllers = {
                     ]});
                 }
             })
+            .catch(function(error){console.log(error)})
+            
         } else {
             return res.render('users/login', {errors: errors.errors})
         }

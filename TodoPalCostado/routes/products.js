@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
-
+var multer = require('multer');
+var path = require('path');
 const productsController = require('../controllers/productsController');
+const db = require('../database/models');
+
 
 /* GET users listing. */
 //ruta de productos (productos-detalle de producto - ABM)
@@ -21,7 +24,7 @@ router.get('/:id/edit', productsController.edit);
 router.put('/:id', productsController.update);
 
 // Eliminación de producto
-router.delete('/:id/delete', productsController.delete);
+router.delete('/:id/delete', productsController.destroy);
 
 
 module.exports = router;

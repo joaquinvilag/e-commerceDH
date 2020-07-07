@@ -24,6 +24,9 @@ module.exports = function(sequelize, dataTypes){
         },
         price: {
             type: dataTypes.DOUBLE
+        },
+        detail: {
+            type: dataTypes.INTEGER
         }
     }
     var config = {
@@ -38,7 +41,7 @@ module.exports = function(sequelize, dataTypes){
             timestamps: false
         })
         Product.hasMany(models.Image,{
-            as:"img",
+            as:"image",
             foreignKey:"FK_product_id",
             timestamps: false
         })

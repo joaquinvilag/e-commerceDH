@@ -14,7 +14,7 @@
           <article class="product">
             <div class="imgProduct">
                 <div class="imageProduct-flex">
-                    <img class="productPh" src="/img/<%= product.image %>" alt="imagen producto">
+                    <img class="productPh" src="/img/<%= product.image.url %>" alt="imagen producto">
                     <div class="sliderDots">
                         <a href="#" class="sliderDot"></a>
                         <a href="#" class="sliderDot"></a>
@@ -24,31 +24,26 @@
                     </div>
                 </div>
             </div>
-                <!--<div class="miniPh">
-                  <div>
-                      <img class="mini" src="../Desarrollo/public/img/Frutos Desecados/pasasdeuva.jpg" alt="">
-                  </div>
-                  <div>
-                      <img class="mini" src="../Desarrollo/public/img/Frutos Desecados/tomatesecos.jpg" alt="">
-                  </div>
-                  
-                </div>-->
             <div class="desc">
                 <h1 class="productTitle"><%= product.name %></h1>
                 <p class="price">$ <%= product.price %></p>
                 <p class="format">por Kilogramo</p>
-                <p class="description"> <%= product.description %>></p>
+                <p class="description"> <%= product.descr %>></p>
 
             </div>
               <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>
             
-            <div>
-              <a href="/products/<%=product.id%>/edit" class="a-btn-act"><button type="button" class="btn btn-outline-success"><i class="fas fa-edit btn-edit"></i></button></a>
-            </div>
-
-            <form action="/products/<%=product.id%>/delete?_method=DELETE" method="POST" >
-              <button type="submit" class="btn btn-outline-success"><i class="fas fa-trash-alt btn-delete"></i>
-            </form>
+            <% if(typeof user != 'undefined'){ %>
+              <% if(user.admin == 1) { %>
+                <div>
+                  <a href="/products/<%=product.idproducts%>/edit" class="a-btn-act"><button type="button" class="btn btn-outline-success"><i class="fas fa-edit btn-edit"></i></button></a>
+                </div>
+    
+                <form action="/products/<%=product.idproducts%>/delete?_method=DELETE" method="POST" >
+                  <button type="submit" class="btn btn-outline-success"><i class="fas fa-trash-alt btn-delete"></i>
+                </form>
+              <% } %>
+            <% } %>
                 
           </article>
           

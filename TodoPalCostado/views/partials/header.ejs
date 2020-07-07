@@ -52,23 +52,32 @@
                 </div>
             </div>
         </div>
+        <% if(typeof user != 'undefined'){ %>
         <div class="flex_container_login">
             <div class="flex_items_login">
-            <% if(typeof user != 'undefined'){ %>
+            
                 <a href="/users/perfil" class="font_log">
                     <i class="fas fa-user-circle icon_login"></i>
                     <br>
                     <p><%=user.name%></p>
                 </a>
-
-            <% } else { %>
+            </div>
+            <div class="flex_items_login">
+                <a href="/products/create/admin" class="font_log">
+                    <i class="fas fa-plus icon_login"></i>
+                    <br>    
+                    <p>Agregar</p> 
+                </a>
+            </div>
+        </div>
+        <% } else { %>
+        <div class="flex_container_login">
+            <div class="flex_items_login">           
                 <a href="/users/login" class="font_log">
                     <i class="fas fa-user-circle icon_login"></i>
                     <br>
                     <p>Login</p>
                 </a>
-            <% } %>
-                
             </div>
             <div class="flex_items_login">
                 <a href="/users/carrito" class="font_log">
@@ -78,6 +87,7 @@
                 </a>
             </div>
         </div>
+        <% } %>
     </nav>
     <nav class="nav_menu_options">
         <div class="flex-items">
