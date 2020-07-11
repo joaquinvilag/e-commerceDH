@@ -1,0 +1,17 @@
+-Detalles esteticos en el home (lo veo medio vacio, le falta amor).
+-Rutas de cada categoria.
+-Hacer el search funcional.
+-Detalles esteticos en login y registro(cuando saltan los errores, estos se desbordan).
+-Hay un pequeño bug en el registro que no esta dejando registar nuevo usuario.
+-Terminar carrito.
+
+
+
+
+edgar@gmail.com 
+contraseña: 12345678
+admin
+
+guri@gmail.com
+contraseña: 12345678
+cliente
