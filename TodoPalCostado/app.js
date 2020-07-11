@@ -9,6 +9,7 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+var cartRouter = require('./routes/cart');
 var recordameMiddleware = require('./middlewares/recordameMiddleware');
 
 var app = express();
@@ -28,8 +29,14 @@ app.use(recordameMiddleware);
 app.use(function(req, res, next){
   if(req.session.usuarioLogueado){
     res.locals.user = req.session.usuarioLogueado;
+    res.locals.admin = req.session.usuarioLogueado.admin;
   } else {
     res.locals.user = undefined;
+  }
+  if(req.session.cart){
+    res.locals.cart = req.session.cart;
+  } else {
+    res.locals.cart = undefined;
   }
   next();
 });
@@ -40,6 +47,7 @@ app.use(function(req, res, next){
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/cart', cartRouter)
 
 
 // catch 404 and forward to error handler

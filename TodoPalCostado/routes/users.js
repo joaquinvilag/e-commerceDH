@@ -24,28 +24,13 @@ var upload = multer ({storage:storage});
 
 
 /* GET users listing. */
-//ruta de usuario (registro/login)
-
-router.get('/login', guestMiddleware, usersController.showLoginForm);
-
-router.post('/login', [
-    check('email').isEmail().withMessage('Email invalido'),
-    check('password').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')
-], usersController.processLoginForm);
-
-
-  // Datos de perfil
-router.get('/perfil', authMiddleware, usersController.showProfile);
-  // Carrito de compras
-router.get('/carrito', authMiddleware, usersController.showCart );
-
   // CRUD
   //login de usuario
 router.get('/login', guestMiddleware, usersController.showLoginForm);
 
 router.post('/login', [
-    check('email').isEmail().withMessage('Email invalido'),
-    check('password').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')
+    check('email').isEmail().withMessage('Este email no se encuentra registrado'),
+    check('password').isLength({ min: 8 }).withMessage('Contraseña invalida recorda que debe tener un minimo de 8 caracteres')
 ], usersController.processLoginForm);
 
 
@@ -53,8 +38,8 @@ router.post('/login', [
   router.get('/register', guestMiddleware, usersController.create);
 
   router.post('/register', upload.any(), [
-    check('name').isLength({min: 1}).withMessage('Este campo no puede estar vacio'),
-    check('last_name').isLength({min: 1}).withMessage('Este campo no puede estar vacio'),
+    check('name').isLength({min: 2}).withMessage('Este campo no puede estar vacio'),
+    check('last_name').isLength({min: 2}).withMessage('Este campo no puede estar vacio'),
     check('email').isEmail().withMessage('Email incorrecto'),
     check('password').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
 
@@ -79,9 +64,8 @@ router.post('/login', [
 
   // END CRUD //
 
- router.get('/alluser',usersController.allUser);
-
- router.get('/alluser/:id', usersController.showUser)
+  // Datos de perfil
+router.get('/perfil', authMiddleware, usersController.showProfile);
 
 
 

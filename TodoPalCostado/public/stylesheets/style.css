@@ -226,7 +226,8 @@ nav ul li a{
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-evenly;
-
+      font-size: 15px;
+      text-decoration: none;
   }
   .flex-items{
       text-align: center;

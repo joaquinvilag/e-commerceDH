@@ -50,14 +50,15 @@ h1 a:hover {
     display: flex;
 }
 .div_btn_products{
-    background-color: rgba(0, 0, 0, 0.562);
+    background-color: rgba(0, 0, 0, 0.514);
+    backdrop-filter: blur(10px);
     width: 250px;
     height: 80px;
     border-radius: 10px;
     margin-left: 400px;
 }
 .a_btn_products{
-    color: #ffffff;
+    color: #e6c97b;
     font-size: 24px;
     font-style: inherit;
     display: block;
@@ -167,9 +168,13 @@ div.divider {
     align-items: center ;
 }
 
+
 p.divider-text {
     color: grey;
    
+}
+form.btn-add-cart{
+    margin-right: 30px;
 }
 .btn.btn-info {
     width: 100%;

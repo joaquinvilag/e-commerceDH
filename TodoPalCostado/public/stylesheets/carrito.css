@@ -1,50 +1,52 @@
 html {
     background: #bbc3c6;
-    font: 62.5%/1.5em "Trebuchet Ms", helvetica;
+    
   }
   
   * {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
+    
   }
   
-  @font-face {
-      font-family: 'Shopper';
-      src: url('http://www.shopperfont.com/font/Shopper-Std.ttf');
+  section{
+    font: 62.5%/1.5em "Trebuchet Ms", helvetica;
   }
-  
   .shopper {
     text-transform: lowercase;
     font: 2em 'Shopper', sans-serif;
     line-height: 0.5em;
     display: inline-block;
+    color: var(--brown);
   }
   
   
   
-  h1 {
+  h1{
     text-transform: uppercase;
     font-weight: bold;
     font-size: 2.5em;
+    color: var(--brown);
   }
   
-  p {
+  .date {
     font-size: 1.5em;
     color: #8a8a8a;
+    
   }
   
   input {
-    border: 0.3em solid #bbc3c6;
+    
     padding: 0.5em 0.3em; 
     font-size: 1.4em;
-    color: #8a8a8a;
     text-align: center;
   }
   
-  img {
-    max-width: 9em;
+  .img-product {
+    max-width: 6em;
     width: 100%;
     overflow: hidden; 
+    margin-left: 1em;
     margin-right: 1em;
   }
   
@@ -52,8 +54,8 @@ html {
     text-decoration: none;
   }
   
-  .container {
-    max-width: 75em;
+  .container-cart {
+    max-width: 100em;
     width: 95%;
     margin: 40px auto;  
     overflow: hidden;
@@ -69,12 +71,12 @@ html {
     position: relative;
     z-index: 1;
     color: #f7f7f7;
-    background: rgb(77, 235, 190);
+    background: rgb(243, 243, 243);
   }
   
-  .cart {
-    margin: 2.5em;
+  .cart2 {
     overflow: hidden;
+    
   }
   
   .cart.is-closed {
@@ -101,21 +103,23 @@ html {
   
   .th {
     background: rgb(77, 235, 190);
-    color: rgb(7, 7, 7.15, 14, 14);
+    color: var(--brown);
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.5em;
+    padding-left: 3em;
   }
   
   .tf {
     background: rgb(77, 235, 190);
     text-transform: uppercase;
     text-align: right;
-    font-size: 1.2em;  
+    font-size: 1.5em;  
+    padding-left: 500px;
   }
   
   .tf p {
-    color: rgb(0, 0, 0);
+    color: var(--brown);
     font-weight: bold;
   }
   
@@ -136,40 +140,22 @@ html {
     text-align: center;
     width: 17%;
   }
-  
+  div.price{
+    margin-left: 40px;
+  }
   .col-numeric p {
     font: bold 1.8em helvetica;
   }
   
   .col-total p {
+    display: flex;
+    justify-content: center;
     color: #12c8b1;
   }
   
-  .tf .col {
-    width: 20%;
-  }
-  
-  .row > div {
-    vertical-align: middle;
-  }
-  
-  .row-bg2 {
-    background: #f7f7f7;
-  }
-  
-  .visibility-cart {
-    position: absolute;
-    color: rgb(0, 0, 0);
-    top: 0.5em;
-    right: 0.5em;
-    font:  bold 2em arial;
-    border: 0.16em solid #fff;
-    border-radius: 2.5em;
-    padding: 0 0.22em 0 0.25em ;
-  }
-  
   .col-qty > * {
-    vertical-align: middle; 
+    vertical-align: middle;
+    margin-left: 20px; 
   }
   
   .col-qty > input {
@@ -184,12 +170,12 @@ html {
     font-size: 2.5em;
     font-weight: bold;
     text-align: center;
-    background: #43ace3;  
+    background: var(--brown);
     color: #fff;
   }
   
   a.qty:hover {
-    background: #3b9ac6;
+    background: rgb(77, 235, 190);
   }
   
   .btn {
@@ -197,13 +183,14 @@ html {
     border-radius: 0.3em;
     font-size: 1.4em;
     font-weight: bold;
-    background: #43ace3;
+    background: var(--brown);;
     color: #fff;
-    box-shadow: 0 3px 0 rgba(59,154,198, 1)
+    box-shadow: 0 3px 0 rgb(0, 0, 0)
   }
   
   .btn:hover {
-    box-shadow: 0 3px 0 rgba(59,154,198, 0)
+    box-shadow: 0 3px 0 rgba(59,154,198, 0);
+    color: rgb(77, 235, 190);
   }
   
   .btn-update {
@@ -232,8 +219,16 @@ html {
       max-width: 100%;
       margin-bottom: 1em;
     }
+    .qty{
+      display: none;
+    }
+    .tf{
+      padding-left: 120px;
+    }
   }
   
   @media screen and ( max-width: 591px) {
-    
+    .tf{
+      padding-left: 20px;
+    }
   }

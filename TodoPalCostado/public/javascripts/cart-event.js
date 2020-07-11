@@ -47,7 +47,7 @@ $('.visibility-cart').on('click',function(){
           if (value < 100) {
           value = value + 1;
           } else {
-              value =100;
+              value = 0;
           }
   
           $input.val(value);

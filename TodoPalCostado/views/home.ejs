@@ -47,9 +47,11 @@
         <p class="description"><%= product.description %></p>
     
       </div>
-      <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>
-                
-        <a class="btn btn-info" type="button" href="/products/<%= product.id %>" role="button">Más información</a>
+      <form action="/cart/add-to-cart" method="POST" class="btn-add-cart">
+        <input type="hidden" name="id" value="idproducts">
+        <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>
+      </form>          
+        <a class="btn btn-info" type="button" href="/products/<%= product.idproducts %>" role="button">Más información</a>
     </article>
     <% }); %>
 
