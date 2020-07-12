@@ -89,8 +89,13 @@ nav ul li i a{
 }
 nav ul li a{
   color: var(--brown);
-  text-decoration: var(--brown);
+  text-decoration: none;
   font-weight: bold;
+}
+nav ul li a:hover{
+  text-decoration: none;
+  color:#ffffff;
+  font-size: 18px;
 }
 
 .flex-logo-mobile{
