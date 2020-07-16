@@ -44,23 +44,23 @@ router.post('/login', [
     check('password').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
 
     body('email').custom(function(value){
-      let userDb;
       db.User.findAll({
         where: {
           email: value
         }  
       })
       .then(function(user){
-        userDb = user;
+        console.log(user)
+        console.log(value)
+        if(user.email === value){
+          return false;
+        }
       })
-      if(userDb.email == value){
-        return false;
-      }
       return true;
     }).withMessage('Usuario ya existente')
       
 
-  ],usersController.store);
+  ] ,usersController.store);
 
   // END CRUD //
 

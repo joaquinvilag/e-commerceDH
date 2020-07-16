@@ -201,8 +201,6 @@ nav ul li a:hover{
       flex-wrap: wrap;
       justify-content: space-between;
       align-content: center;
-
-
   }
   .icon_items_login{
       display: flex;   
@@ -299,6 +297,7 @@ nav ul li a:hover{
   .icon_login{
       font-size: 38px;
       margin-bottom: 6px;
+      padding-left: 3px;
   }
   .flex_container_login{
     margin-top: 14px;

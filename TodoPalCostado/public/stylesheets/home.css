@@ -1,15 +1,10 @@
+body{
+    
+}
 h1, h2, h3, h4 {
     font-family: '/font/OpenSans-Regular'
 }
 
-h1.title-banner {
-    display: block;
-    font-size: 60px;
-}
-
-h6.subtitle-banner {
-    display: inline;
-}
 
 h2.subtitle {
     text-align: center;
@@ -28,12 +23,12 @@ h1 a {
 
 .iso {
     display: flex;
-    width: 30%;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .iso-img {
-    max-width: 50%;
+    width: 60%;
 }
 
 .banner-titles {
@@ -47,9 +42,11 @@ h1 a:hover {
 }
 
 .section_btn_products{
-    display: flex;
+    margin-right: 300px;
 }
 .div_btn_products{
+    display: flex;
+    justify-content: start;
     background-color: rgba(0, 0, 0, 0.514);
     backdrop-filter: blur(10px);
     width: 250px;
@@ -253,6 +250,12 @@ form.btn-add-cart{
   iframe{
       margin-top: 5%;
       margin-bottom: 5%;
+  }
+  @media (max-width: 1050px){
+
+    .section_btn_products{
+        margin-right: 0px;
+    }
   }
 
   @media (max-width: 767px) {
