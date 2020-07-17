@@ -23,7 +23,9 @@ const controller = {
         })
     },
     removeFromCart: (req,res, next) => {
-
+        cartProduct = cartProduct.filter(product => product.name != req.params.name);
+        req.session.cart = cartProduct;
+        res.redirect('/cart');
     }    
 };
 

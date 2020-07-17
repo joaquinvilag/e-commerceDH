@@ -1,6 +1,4 @@
-body{
-    
-}
+
 h1, h2, h3, h4 {
     font-family: '/font/OpenSans-Regular'
 }
@@ -69,7 +67,9 @@ section {
 }
 
 main {
-    background-image: url(/img/banner/Nueces.jpg); 
+    background-image: url(/img/banner/Nueces.jpg);
+    /* background-repeat: no-repeat; */
+    /* background-size: 100% 100%;  */
     background-size: cover;
     opacity: 0.85;
     width: 100%;

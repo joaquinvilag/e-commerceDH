@@ -92,11 +92,7 @@ nav ul li a{
   text-decoration: none;
   font-weight: bold;
 }
-nav ul li a:hover{
-  text-decoration: none;
-  color:#ffffff;
-  font-size: 18px;
-}
+
 
 .flex-logo-mobile{
   display: flex;
@@ -237,7 +233,10 @@ nav ul li a:hover{
   }
   
   .menu_ul{
-      line-height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 38px;
 
   }
   
@@ -253,20 +252,18 @@ nav ul li a:hover{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    text-align: none;
+    text-align: center;
   }
-  .fa-chevron-down{
-      font-size: 14px;
-      margin-left: 5px;
-      margin-top: 0px;
-      padding-top: 12px;
-      padding-left: 2px;
-  }
-
-
   a{
       color: var(--brown);
       text-decoration: none;
+      transition: 0.5s;
+  }
+  nav ul li a:hover{
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 18px;
+
   }
 }
 
@@ -278,9 +275,10 @@ nav ul li a:hover{
   }
   
   .menu_li{
-      display: inline-block;
-      padding-top: 7px;
-      padding-bottom: 7px;
+      /* display: flex;
+      flex-direction: row; */
+      /* padding-top: 7px;
+      padding-bottom: 7px; */
       min-width: 300px;
   }
   .a_menu_li{

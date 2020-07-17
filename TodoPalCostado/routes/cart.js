@@ -16,6 +16,9 @@ router.get('/', cartController.cart);
 // Add to shopping cart
 router.post('/add-to-cart', cartController.addToCart);
 
+// Remove item-cart
+router.get('/remove-from-cart/:name', cartController.removeFromCart);
+
 
 
 module.exports = router;

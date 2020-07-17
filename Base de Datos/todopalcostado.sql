@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-07-2020 a las 08:55:29
+-- Tiempo de generación: 17-07-2020 a las 19:34:22
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -144,7 +144,9 @@ INSERT INTO `user` (`iduser`, `name`, `last_name`, `address`, `phone`, `email`, 
 (4, 'Gerri', 'Canada', '8937 Portage Road', 673, 'gcanada3@tinypic.com', '0000-00-00', 'OtSuVTLbRz', 'https://robohash.org/estautautem.bmp?size=50x', 0),
 (5, 'Janeta', 'McGuffie', '6 Roxbury Place', NULL, 'jmcguffie4@vimeo.com', '0000-00-00', 'EWRYxvyKjKR', 'https://robohash.org/laudantiumvelitquo.jpg?s', 0),
 (6, 'edgar', 'vargas', NULL, NULL, 'edgar@gmail.com', NULL, '$2b$10$47Nl2HFxX89MXTQw.dGpwu1334A5YNMBu89Dkx0n5n7DHTUC/cWQK', 'avataravatar1594007554873.jpg', 1),
-(7, 'gustavo', 'petrov', NULL, NULL, 'guri@gmail.com', NULL, '$2b$10$4lYRWMl8hkFomoib3blQlODnFcfnq7T/amupt3X2G0Vn53q4bC2WS', 'avataravatar1594007952617.jpeg', 0);
+(7, 'gustavo', 'petrov', NULL, NULL, 'guri@gmail.com', NULL, '$2b$10$4lYRWMl8hkFomoib3blQlODnFcfnq7T/amupt3X2G0Vn53q4bC2WS', 'avataravatar1594007952617.jpeg', 0),
+(9, 'Titan', 'Vargas', NULL, NULL, 'titan@gmail.com', NULL, '$2b$10$Q0fYUeMIAMb2flWyPssjCuIOeU00R0BLaq6WJHskjFyKmhE7TKaei', 'avataravatar1594862136113.jpg', 0),
+(10, 'Juan', 'Cho', NULL, NULL, 'juan@gmail.com', NULL, '$2b$10$KNKxlX.H.Yg432N8vHuxp.K3uN4rgT1dpBVxaxUYrzdaQ.oQqLjMy', 'avataravatar1594863261134.jpg', 0);
 
 --
 -- Índices para tablas volcadas
@@ -229,7 +231,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
@@ -259,12 +261,6 @@ ALTER TABLE `images`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`FK_category_id`) REFERENCES `category` (`idcategory`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`roll_id`) REFERENCES `roll` (`roll`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -9,7 +9,7 @@ html {
     
   }
   
-  section{
+  form{
     font: 62.5%/1.5em "Trebuchet Ms", helvetica;
   }
   .shopper {
@@ -127,6 +127,12 @@ html {
     padding: 1em;
     width: 12%;
   }
+  .nav-price{
+    left: 40px;
+  }
+  .nav-qty{
+    right: 46px;
+  }
   
   .col-pro {
     width: 44%;
@@ -143,6 +149,17 @@ html {
   div.price{
     margin-left: 40px;
   }
+  .fa-times-circle{
+    margin-right: 20px;
+    font-size: 24px;
+    color: var(--brown);
+    transition: 0.5s;
+    padding-top: 16px;
+  }
+  .fa-times-circle:hover{
+    color: rgb(252, 217, 158);
+  }
+
   .col-numeric p {
     font: bold 1.8em helvetica;
   }
@@ -175,7 +192,7 @@ html {
   }
   
   a.qty:hover {
-    background: rgb(77, 235, 190);
+    background: rgb(252, 217, 158);
   }
   
   .btn {
@@ -202,9 +219,25 @@ html {
     transition: all 0.3s ease-in-out;
   }
   
-  @media screen and ( max-width: 755px) {
+  @media screen and ( max-width: 853px) {
     .container {
       width: 98%;
+    }
+    .nav-pro{
+      right: 30px;
+    }
+    .nav-price{
+      left: 10px;
+    }
+    .nav-qty{
+      right: 46px;
+    }
+    .nav-total{
+      right:  34px;
+    }
+    
+    .col-pro {
+      width: 44%;
     }
     
     .col-pro {
@@ -230,5 +263,17 @@ html {
   @media screen and ( max-width: 591px) {
     .tf{
       padding-left: 20px;
+    }
+    .nav-pro{
+      right: 40px;
+    }
+    .nav-price{
+      left: -26px;
+    }
+    .nav-qty{
+      right: 46px;
+    }
+    .nav-total{
+      right: 76px;
     }
   }

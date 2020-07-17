@@ -12,83 +12,86 @@
     <!-- ====== Header====== -->
     <%- include('../partials/header.ejs') %>
     <!-- =================== -->
+    
     <section>
-      <div class="container-cart">
-        <div class="heading">
-          <% if( typeof cart == 'undefined') { %>
-          <h1>
-            <span class="shopper">c</span> Tu carrito esta vacío
-          </h1>
-          <% } else { %>
-          <h1>
-            <span class="shopper">c</span> Carrito de compras
-          </h1>
-          
-
-        
-        <div class="cart2 transition is-open">
-          
-          <a href="#" class="btn btn-update">Comprar</a>
-          
-          
-          <div class="table">
+      <form action="#" class="form">
+        <div class="container-cart">
+          <div class="heading">
+            <% if( typeof cart == []) { %>
+            <h1>
+              <span class="shopper">c</span> Tu carrito esta vacío
+            </h1>
+            <% } else { %>
+            <h1>
+              <span class="shopper">c</span> Carrito de compras
+            </h1>
             
-            <div class="layout-inline row th">
-              <div class="col col-pro align-center">Product</div>
-              <div class="col col-price align-center">Price</div>
-              <div class="col col-qty align-center">QTY</div>
-              <div class="col align-center">Total</div>
-            </div>
-              <% for(var i = 0; i < cart.length; i++){ %>
-              <div class="layout-inline row">
+  
+          
+          <div class="cart2 transition is-open">
+            
+            <a href="#" class="btn btn-update">Comprar</a>
+            
+            
+            <div class="table">
               
-                <div class="col col-pro layout-inline">
-                  <img class="img-product" src="/img/Frutas_Desecadas/ciruelasdesecadas.jpg" alt="" />
-                  <p class="date"><%=cart[i].name%></p>
-                </div>
-              
-                <div class="col col-price col-numeric price align-center ">
-                  <p>$<%=cart[i].price%></p>
-                </div>
-      
-                <div class="col col-qty layout-inline">
-                  <a href="#" class="qty qty-minus">-</a>
-                    <input type="numeric" name="QTY" value="1" />
-                  <a href="#" class="qty qty-plus">+</a>
-                </div>
-              
-                <div class="col col-total col-numeric">              
-                  <p> $<%=cart[i].price%></p>
-                </div>
+              <div class="layout-inline row th">
+                <div class="col col-pro nav-pro">Product</div>
+                <div class="col col-price nav-price">Price</div>
+                <div class="col col-qty nav-qty">QTY</div>
+                <div class="col nav-total">Total</div>
               </div>
-              <% } %>
-           
-             <div class="tf">
-               <div class="row layout-inline">
-                 <div class="col">
-                   <p>IVA :</p>
+                <% for(var i = 0; i < cart.length; i++){ %>
+                <div class="layout-inline row">
+                
+                  <div class="col col-pro layout-inline">
+                    <img class="img-product" src="/img/Frutas_Desecadas/ciruelasdesecadas.jpg" alt="" />
+                    <p class="date"><%=cart[i].name%></p>
+                  </div>
+                
+                  <div class="col col-price col-numeric price align-center ">
+                    <p>$<%=cart[i].price%></p>
+                  </div>
+        
+                  <div class="col col-qty layout-inline">
+                    <a href="#" class="qty qty-minus">-</a>
+                      <input type="numeric" name="QTY" value="1" class="qty-input"/>
+                    <a href="#" class="qty qty-plus">+</a>
+                  </div>
+                
+                  <div class="col col-total col-numeric">              
+                    <p class="total-p"><%=cart[i].price%></p>
+                  </div>
+                  <div>
+                    <a href="/cart/remove-from-cart/<%=cart[i].name%>">
+                      <i class=" col fas fa-times-circle"></i>
+                    </a>
+                  </div>
+                      
+                </div>
+                <% } %>
+             
+               <div class="tf">
+                 <div class="row layout-inline">
+                   <div class="col">
+                     <p>IVA :</p>
+                   </div>
+                   <div class="col"></div>
                  </div>
-                 <div class="col"></div>
-               </div>
-               <div class="row layout-inline">
-                 <div class="col">
-                   <p>Shipping :</p>
+                  <div class="row layout-inline">
+                   <div class="col">
+                     <p>Total :</p>
+                   </div>
+                   <div class="col"></div>
                  </div>
-                 <div class="col"></div>
-               </div>
-                <div class="row layout-inline">
-                 <div class="col">
-                   <p>Total :</p>
-                 </div>
-                 <div class="col"></div>
-               </div>
+              
+              </div>         
+          </div>
             
-            </div>         
+            <a href="#" class="btn btn-update">Comprar</a>
+        <% } %>
         </div>
-          
-          <a href="#" class="btn btn-update">Comprar</a>
-      <% } %>
-      </div>
+      </form>
     </section>
 
     <!--====== Footer =======-->
