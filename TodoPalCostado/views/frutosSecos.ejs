@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/stylesheets/home.css">
+  <title>Todo los productos - Dietetica</title>
+</head>
+
+<body>
+        <!-- ====== Header====== -->
+  <%- include('partials/header.ejs') %>
+        <!-- =================== -->
+    <h1>Frutos Secos</h1>
+            
+    <section>
+        <% products.forEach(function(product){ %> 
+        <article class="product" >
+            <a id="link" href="/products/<%= product.idproducts %>"><img class="productPh" src="/img/<%= product.image.url %>" alt=""></a>
+            <div class="sliderDots">
+                <a href="" class="sliderDot"></a>
+                <a href="" class="sliderDot"></a>
+                <a href="" class="sliderDot"></a>
+                <a href="" class="sliderDot"></a>
+            </div>
+            <div class="desc">
+                <h1 class="productTitle"><a href="/products/<%= product.idproducts %>"><%= product.name %></a></h1>
+                <p class="price">$<%= product.price %></p>
+                <p class="format">por Kilogramo</p>
+                <p class="description"><%= product.descr %></p>
+            </div>
+            <form action="/cart/add-to-cart" method="POST" class="btn-add-cart">
+                <input type="hidden" name="id" value="<%=product.idproducts%>">
+                <button type="submit" class="btn btn-outline-success" >Agregar al carrito</button>
+            </form>  
+                        
+            <a class="btn btn-info" type="button" href="/products/<%= product.idproducts %>" role="button">Más información</a>
+        </article>
+        <% }); %>
+    </section>
+
+
+
+        <!--====== Footer =======-->
+    <%- include('partials/footer') %>
+        <!--===== End Footer =======-->
+
+    <%- include('partials/bootstrap-jq-poppers') %>
+
+</body>
