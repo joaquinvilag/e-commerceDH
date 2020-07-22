@@ -18,6 +18,39 @@ const controller = {
     },
     search: function(req, res){
         res.send("Resultados de busqueda");
+    },
+    frutasDesecadas: function(req, res){
+        db.Product.findAll({
+            where: {
+                FK_category_id: 2
+              },
+            include: [{association: "category"}, {association: "image"}]
+        })
+        .then(function(products){
+            res.render("frutasDesecadas", { "products": products });
+        });
+    },
+    frutosSecos: function(req, res){
+        db.Product.findAll({
+            where: {
+                FK_category_id: 1
+              },
+            include: [{association: "category"}, {association: "image"}]
+        })
+        .then(function(products){
+            res.render("frutosSecos", { "products": products });
+        });
+    },
+    hamburguesas: function(req, res){
+        db.Product.findAll({
+            where: {
+                FK_category_id: 3
+              },
+            include: [{association: "category"}, {association: "image"}]
+        })
+        .then(function(products){
+            res.render("hamburguesas", { "products": products });
+        });
     }
 };
 
