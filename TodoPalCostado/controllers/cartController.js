@@ -1,10 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
+// const { Association } = require('sequelize/types');
 var sequelize = db.sequelize;
 cartProduct = [];
 
-//rutas de home y search
+//rutas de carrito
 const controller = {
     cart: function(req, res){
         if(req.session.usuarioLogueado != undefined || req.cookies.recordame != undefined){
@@ -26,7 +27,7 @@ const controller = {
         cartProduct = cartProduct.filter(product => product.name != req.params.name);
         req.session.cart = cartProduct;
         res.redirect('/cart');
-    }    
+    }
 };
 
 

@@ -8,9 +8,11 @@ $('a.qty-minus').on('click', function(e) {
     var $this = $(this);
     var $input = $this.closest('div').find('input');
     var value = parseInt($input.val());
-      
+    var price = parseInt(document.querySelector('.price-product').innerHTML);
+    var totalPrice = document.querySelector('.total-product');  
     if (value > 1) {
         value = value - 1;
+        totalPrice.innerHTML = price * value;
     } else {
         value = 0;
     }
@@ -23,17 +25,15 @@ $('a.qty-plus').on('click', function(e) {
     e.preventDefault();
     var $this = $(this);
     var $input = $this.closest('div').find('input');
-    var total =document.querySelector('p.total-p');
     var value = parseInt($input.val());
-    console.log(total);
+    var price = parseInt(document.querySelector('.price-product').innerHTML);
+    var totalPrice = document.querySelector('.total-product');
     if (value < 100) {
         value = value + 1;
-        total = total * value;
+        totalPrice.innerHTML = price * value;
     } else {
         value = 0;
-        total = total * value
     }
-    console.log(value);
     $input.val(value);
 });
   
@@ -48,3 +48,5 @@ $('input').on('blur', function(){
         input.val(100);
     }
 });
+
+

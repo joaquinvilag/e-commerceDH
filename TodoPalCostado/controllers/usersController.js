@@ -27,17 +27,17 @@ const userControllers = {
                     if(req.body.recordame != undefined) {
                          res.cookie('recordame', user[0].email, {maxAge: 60000})
                      };
-                    res.redirect('/') 
+                     res.redirect('/users/perfil');
                 } else {
-                    return res.render('users/login', {errors: [
+                    return res.render('formLogin', {errors: [
                         {msg: 'Credenciales invalidas'}
                     ]});
                 }
             })
-            .catch(function(error){console.log(error)})
+            // .catch(function(error){console.log(error)})
             
         } else {
-            return res.render('users/login', {errors: errors.errors})
+            return res.render('formLogin', {errors: errors.errors})
         }
             
        

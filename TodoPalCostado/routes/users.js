@@ -29,38 +29,37 @@ var upload = multer ({storage:storage});
 router.get('/login', guestMiddleware, usersController.showLoginForm);
 
 router.post('/login', [
-    check('email').isEmail().withMessage('Este email no se encuentra registrado'),
-    check('password').isLength({ min: 8 }).withMessage('Contraseña invalida recorda que debe tener un minimo de 8 caracteres')
+  check('email').isEmail().withMessage('Usuario no registrado'),
+  check('password').isLength({min: 8}).withMessage('Contraseña invalida')
 ], usersController.processLoginForm);
 
 
   //registro de usuario
-  router.get('/register', guestMiddleware, usersController.create);
+router.get('/register', guestMiddleware, usersController.create);
 
-  router.post('/register', upload.any(), [
-    check('name').isLength({min: 2}).withMessage('Este campo no puede estar vacio'),
-    check('last_name').isLength({min: 2}).withMessage('Este campo no puede estar vacio'),
-    check('email').isEmail().withMessage('Email incorrecto'),
-    check('password').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
-
-    body('email').custom(function(value){
-      db.User.findAll({
-        where: {
-          email: value
-        }  
-      })
-      .then(function(user){
-        console.log(user)
-        console.log(value)
-        if(user.email === value){
-          return false;
-        }
-      })
-      return true;
-    }).withMessage('Usuario ya existente')
+router.post('/register', upload.any(), [
+  check('name').isLength({min: 2}).withMessage('Este campo no puede estar vacio'),
+  check('last_name').isLength({min: 2}).withMessage('Este campo no puede estar vacio'),
+  check('email').isEmail().withMessage('Email incorrecto'),
+  check('password').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
+  body('email').custom(function(value){
+    db.User.findAll({
+      where: {
+        email: value
+      }  
+    })
+    .then(function(user){
+      console.log(user)
+      console.log(value)
+      if(user.email === value){
+        return false;
+      }
+    })
+    return true;
+  }).withMessage('Usuario ya existente')
       
 
-  ] ,usersController.store);
+] ,usersController.store);
 
   // END CRUD //
 
