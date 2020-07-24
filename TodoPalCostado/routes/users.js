@@ -38,8 +38,8 @@ router.post('/login', [
 router.get('/register', guestMiddleware, usersController.create);
 
 router.post('/register', upload.any(), [
-  check('name').isLength({min: 2}).withMessage('Este campo no puede estar vacio'),
-  check('last_name').isLength({min: 2}).withMessage('Este campo no puede estar vacio'),
+  check('name').isLength({min: 2}).withMessage('El campo Nombre no puede estar vacio'),
+  check('last_name').isLength({min: 2}).withMessage('El campo Apellido no puede estar vacio'),
   check('email').isEmail().withMessage('Email incorrecto'),
   check('password').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
   body('email').custom(function(value){

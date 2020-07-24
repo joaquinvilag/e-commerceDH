@@ -11,6 +11,11 @@
         <!-- ===============   -->
     
     <section class="sec_form_register">
+        <!-- validaciones frontEnd -->
+        <div class="errors">
+                
+        </div>
+        <!-- validaciones frontEnd -->
         <form method="POST" class="div-form-register" enctype="multipart/form-data">
             <div class="div_form_register">
                 <h4 class="h4_menu_register">
@@ -22,31 +27,29 @@
             </div>
             <form  action="/users/register" method="POST" class="form_register_date">
                 <div class="group_form_register">
-                    <input type="text" class="field_form_register" name="name"><span class="barra"></span>
+                    <input type="text" class="field_form_register name" name="name"><span class="barra"></span>
                     <label>Nombre</label><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="text" class="field_form_register" name="last_name"><span class="barra"></span>
+                    <input type="text" class="field_form_register last_name" name="last_name"><span class="barra"></span>
                     <label>Apellido</label><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="email" class="field_form_register" name="email"><span class="barra"></span>
+                    <input type="email" class="field_form_register email" name="email"><span class="barra"></span>
                     <label>Email</label><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="password" class="field_form_register" name="password"><span class="barra"></span>
+                    <input type="password" class="field_form_register pw" name="password"><span class="barra"></span>
                     <label class="label_form_register">Contraseña</label class="label_form_register"><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="password" class="field_form_register" name="confirmPassword"><span class="barra"></span>
+                    <input type="password" class="field_form_register Cpw" name="confirmPassword"><span class="barra"></span>
                     <label class="label_form_register">Confirmar contraseña</label>
                 </div>
                 <div>
-                    <input type="file" class="field_form_register" name="avatar">
+                    <input type="file" class="field_form_register img" name="avatar">
                     <label class="lb-avatar">Avatar</label><br>
                 </div>
-                   
-
 
                 <% if (typeof errors != 'undefined'){ %>
                     <p style="color:red">ERROR</p>
@@ -71,7 +74,7 @@
     <!--====== Footer =======-->
     <%- include('partials/footer') %>
     <!--===== End Footer =======-->
-
+    <script src="/javascripts/validation-register.js"></script>
 
 
     <%- include('partials/bootstrap-jq-poppers') %>

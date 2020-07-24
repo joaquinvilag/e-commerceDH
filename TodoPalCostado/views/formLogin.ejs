@@ -4,6 +4,7 @@
     <%- include('partials/head.ejs') %>
     <link rel="stylesheet" href="/stylesheets/styleRegisterLogin.css">
     <title>Iniciar Sesión</title>
+    
 </head>
 <body>
         <!-- Partials Header -->
@@ -19,14 +20,19 @@
                   <a class="a-form-register off-btn" href="/users/register">Registrarse</a>
                 </h4>
             </div>
+            <!-- validaciones frontEnd -->
+            <div class="errors">
+                
+            </div>
+            <!-- validaciones frontEnd -->
             <form action="/users/login" method="POST" class="form_register_date">
                 <!-- <div class="div_form_input"> -->
                 <div class="group_form_register">
-                    <input type="email" class="field_form_register" name="email" required><span class="barra"></span>
+                    <input type="text" class="field_form_register" name="email"><span class="barra"></span>
                     <label class="label_form_register">Email</label><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="password" class="field_form_register" name="password" required><span class="barra"></span>
+                    <input type="password" class="field_form_register" name="password" ><span class="barra"></span>
                     <label class="label_form_register">Contraseña</label><br>
                 </div>
                 <br>
@@ -53,11 +59,12 @@
                 </div>
             </form>
         </form>
-    </section>  
+    </section>
     
     <!--====== Footer =======-->
     <%- include('partials/footer') %>
     <!--===== End Footer =======-->
+    <script src="/javascripts/validation-login.js"></script>
     
 
 

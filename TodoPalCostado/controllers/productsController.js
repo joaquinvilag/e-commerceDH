@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { brotliDecompress } = require('zlib');
 const db = require('../database/models');
+const { validationResult } = require('express-validator');
 const sequelize = db.sequelize;
 
 // let productsFilePath = path.join(__dirname, "../data/products.json");
@@ -32,7 +33,9 @@ const controller = {
         res.render("addProduct");
     },
     store: function(req, res, next){
-        db.Product.create(req.body)
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            db.Product.create(req.body)
         .then(product => {
             console.log('Nuevo producto cargado al sistema')
             res.redirect('/')
@@ -40,6 +43,11 @@ const controller = {
         .catch(error => {
             console.log(error)
         })
+
+        }else{
+            res.render('addProduct',{errors: errors.errors})
+        }
+        
     },
     edit: function(req, res, next){
         db.Product.findByPk(req.params.id, {

@@ -120,24 +120,39 @@
     <!-- ====== Header====== -->
     <%- include('partials/header.ejs') %>
     <!-- =================== -->
+    <% if (typeof errors != 'undefined'){%>
+        <p style="color:red">Error!</p>
+        <ul>
+            <% for(let i = 0; i < errors.length; i++){ %>
+                <li>
+                    <%= errors[i].msg%>
+                </li>
+            <% } %>
+        </ul>        
+    <% } %>
    <section class="section-add-product">
         <div class="add-product-header">
             <h3 class="form-titulo">Formulario de carga de productos</h3>
         </div>
+         <!-- validaciones frontEnd -->
+         <div class="errors">
+                
+        </div>
+        <!-- validaciones frontEnd -->
 
         <div class="div-form-add-product">    
             <form class="form-add-product" class="style-1" action="/products/create" method="POST"> 
                 <div class="addproduct-type">       
                     <label for="name" class="label-add-product"> Ingresar nombre de producto: </label>
-                    <input type="text" id="name" name="name" placeholder="Ingresar producto" class="input-1">
+                    <input type="text" id="name" name="name" placeholder="Ingresar producto" class="input-1 name">
                 </div>
                 <div class="addproduct-type">
                     <label for="price" class="label-add-product"> Precio del producto:</label>
-                    <input type="text" id="price" name="price" placeholder="Ingresar precio " class="input-1">
+                    <input type="text" id="price" name="price" placeholder="Ingresar precio " class="input-1 price">
                 </div>
                 <div class="addproduct-type">
                     <label for="category" class="label-add-product"> Categoria:</label>
-                    <select id="category" name="category" class="input-1">
+                    <select id="category" name="category" class="input-1 category">
                         <option value="">Elige una opción</option>
                         <option value="1">Frutos Secos</option>
                         <option value="2">Frutas Desecadas</option>
@@ -146,7 +161,7 @@
                 </div>
                 <div class="addproduct-type">
                     <label for="detail" class="label-add-product"> Detalle:</label>
-                    <select name="detail" id="detail" class="input-1">
+                    <select name="detail" id="detail" class="input-1 detail">
                         <option value="">Elige una opción</option>
                         <option value="oferta">En oferta</option>
                         <option value="mas-vendido">Mas vendido</option>
@@ -154,10 +169,10 @@
                 </div>
                 <div class="addproduct-type">
                     <label class="label-add-product"> Descrición de producto:</label>
-                    <textarea name="descr" id="descr" cols="30" rows="10"></textarea>
+                    <textarea class="descr" name="descr" id="descr" cols="30" rows="10"></textarea>
                 </div>
                 <div class="addproduct-type">
-                    <input type="file" class="label-add-product" name="images" id="images">
+                    <input type="file" class="label-add-product img" name="images" id="images">
                 </div>
                 <div class="addproduct-type">
                     <button type="submit" class="btn-enviar">Guardar producto</button>
@@ -168,7 +183,7 @@
    <!--====== Footer =======-->
    <%- include('partials/footer') %>
    <!--===== End Footer =======-->
-
+   <script src="/javascripts/validation-createProduct.js"></script>
    <%- include('partials/bootstrap-jq-poppers') %>
         
 </body>
