@@ -28,11 +28,11 @@
             <form action="/users/login" method="POST" class="form_register_date">
                 <!-- <div class="div_form_input"> -->
                 <div class="group_form_register">
-                    <input type="text" class="field_form_register" name="email"><span class="barra"></span>
+                    <input type="text" class="field_form_register email" name="email" id="email"><span class="barra"></span>
                     <label class="label_form_register">Email</label><br>
                 </div>
                 <div class="group_form_register">
-                    <input type="password" class="field_form_register" name="password" ><span class="barra"></span>
+                    <input type="password" class="field_form_register pw" name="password" id="pw" ><span class="barra"></span>
                     <label class="label_form_register">Contraseña</label><br>
                 </div>
                 <br>
@@ -64,7 +64,7 @@
     <!--====== Footer =======-->
     <%- include('partials/footer') %>
     <!--===== End Footer =======-->
-    <script src="/javascripts/validation-login.js"></script>
+    <script src="/javascripts/validation-register.js"></script>
     
 
 

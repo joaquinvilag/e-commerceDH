@@ -134,17 +134,13 @@
         <div class="add-product-header">
             <h3 class="form-titulo">Formulario de carga de productos</h3>
         </div>
-         <!-- validaciones frontEnd -->
-         <div class="errors">
-                
-        </div>
-        <!-- validaciones frontEnd -->
+         
 
         <div class="div-form-add-product">    
             <form class="form-add-product" class="style-1" action="/products/create" method="POST"> 
                 <div class="addproduct-type">       
                     <label for="name" class="label-add-product"> Ingresar nombre de producto: </label>
-                    <input type="text" id="name" name="name" placeholder="Ingresar producto" class="input-1 name">
+                    <input type="text" id="name" name="name" placeholder="Ingresar producto" class="input-1 name" >
                 </div>
                 <div class="addproduct-type">
                     <label for="price" class="label-add-product"> Precio del producto:</label>
@@ -180,6 +176,11 @@
             </form>
         </div>
    </section>
+    <!-- validaciones frontEnd -->
+    <div class="errors">
+                
+    </div>
+    <!-- validaciones frontEnd -->
    <!--====== Footer =======-->
    <%- include('partials/footer') %>
    <!--===== End Footer =======-->

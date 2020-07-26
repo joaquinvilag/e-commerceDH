@@ -3,11 +3,17 @@ window.addEventListener("load",()=>{
 
     form.addEventListener("submit", (e) =>{
         let errors = [];
-        let inputField = document.querySelectorAll("input.field_form_register");
-        if(inputField.value == ""){
-            errors.push("Credenciales inválidas, este campo no puede estar vacío");
-        }else if(inputField.value.length < 8){
-            errors.push("Credenciales inválidas, como mínimo 8 carácteres.")
+        let inputFieldEmail = document.querySelector("input#email");
+        let inputFieldPw = document.querySelector("input#pw");
+        if(inputFieldEmail.value === ""){
+            errors.push("Email inválido");
+        }else if(inputFieldEmail.value.length < 6){
+            errors.push("Email inválido")
+        }
+        if(inputFieldPw.value === ""){
+            errors.push("Contraseña incorrecta")
+        }else if(inputFieldPw.value.length < 6){
+            errors.push("Contraseña incorrecta")
         }
 
         if(errors.length > 0){
