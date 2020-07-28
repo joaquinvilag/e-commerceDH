@@ -29,7 +29,7 @@
   <section>
     <% pdtosMasVendidos.forEach(function(product){ %> 
     <article class="product" >
-      <a id="link" href="/products/<%= product.id %>"><img class="productPh" src="/img/<%= product.image %>" alt="ciruelas desecadas"></a>
+      <a id="link" href="/products/<%= product.idproducts%>"><img class="productPh" src="/img/products/<%= product.images %>" alt="ciruelas desecadas"></a>
       <div class="sliderDots">
         <a href="" class="sliderDot"></a>
         <a href="" class="sliderDot"></a>
@@ -37,7 +37,7 @@
         <a href="" class="sliderDot"></a>
       </div>
       <div class="desc">
-        <h1 class="productTitle"><a href="/products/<%= product.id %>"><%= product.name %></a></h1>
+        <h1 class="productTitle"><a href="/products/<%= product.idproducts %>"><%= product.name %></a></h1>
         <p class="price"><%= product.price %></p>
         <p class="format">por Kilogramo</p>
         <p class="description"><%= product.description %></p>
@@ -45,7 +45,7 @@
       </div>
       <form action="/cart/add-to-cart" method="POST" class="btn-add-cart">
         <input type="hidden" name="id" value="idproducts">
-        <button type="button" class="btn btn-outline-success" >Agregar al carrito</button>
+        <button type="submit" class="btn btn-outline-success" >Agregar al carrito</button>
       </form>          
         <a class="btn btn-info" type="button" href="/products/<%= product.idproducts %>" role="button">Más información</a>
     </article>

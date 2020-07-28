@@ -22,7 +22,7 @@ const controller = {
     detail: function(req, res, next){
         db.Product.findByPk(req.params.id, {
             
-            include:[{association: "category"}, {association: "image"}]
+            include:[{association: "category"}]
         })
         .then(function(product){
             res.render("productDetail", {product: product});
@@ -35,15 +35,19 @@ const controller = {
     store: function(req, res, next){
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            db.Product.create(req.body)
-        .then(product => {
+            var newProduct = {
+                name: req.body.name,
+                price: req.body.price,
+                Fk_category_id: parseInt(req.body.category),
+                detail: req.body.detail,
+                descr: req.body.descr,
+                images: req.body.images
+            }
+            db.Product.create(newProduct)
+            .then(product => {
             console.log('Nuevo producto cargado al sistema')
             res.redirect('/')
-        })
-        .catch(error => {
-            console.log(error)
-        })
-
+            })
         }else{
             res.render('addProduct',{errors: errors.errors})
         }

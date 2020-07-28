@@ -192,16 +192,18 @@ nav ul li a{
 /*=== login & Shopping Cart ===*/
   
   .flex_container_login{
-      width: 120px;
+      width: 200px;
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-content: center;
       position: relative;
+      left: 30px;
+      top: 6px;
   }
   .icon_items_login{
       display: flex; 
       position: relative;  
+      width: 30px;
   }
   .icon_login{
       font-size: 30px;
@@ -231,21 +233,7 @@ nav ul li a{
   a.font_log:hover{
     color:#edc4b3;
   }
-  ul.sub_menu_ul {
-    list-style: none;
-    background-color: #f8f9fa;
-    text-align: center;
-    width: 180px;
-    height: 60px;
-    border-radius: 8px;
-    border: 2px solid #e9ecef;
-    padding: 6px 15px;
-    position: absolute;
-    z-index: 1000;
-    right: 10px;
-    top: 76px;
-    transition: 0.5s;
-  }
+  
   .with_logout{
     width: 180px;
   }
@@ -296,12 +284,6 @@ nav ul li a{
       color: var(--brown);
       text-decoration: none;
       transition: 0.5s;
-  }
-  nav ul li a.a_menu_li:hover{
-    text-decoration: none;
-    color:#ffffff;
-    font-size: 18px;
-    z-index: 100;
   }
 }
 
