@@ -5,19 +5,28 @@ var path = require('path');
 const cartController = require('../controllers/cartController');
 const db = require('../database/models');
 var sequelize = db.sequelize;
-
+var authMiddleware = require('../middlewares/authMiddleware');
+const { cart } = require('../controllers/cartController');
 
 
 /* GET users listing. */
 
 // Show cart
-router.get('/', cartController.cart);
+router.get('/', authMiddleware, cartController.cart);
 
 // Add to shopping cart
-router.post('/add-to-cart', cartController.addToCart);
+router.post('/add-to-cart', authMiddleware, cartController.addToCart);
 
 // Remove item-cart
-router.get('/remove-from-cart/:name', cartController.removeFromCart);
+router.get('/remove-from-cart/:id', cartController.removeFromCart);
+
+// Purchase closing
+router.post('/finalizar-compra', cartController.purchasePayment);
+
+
+router.get('/prueba', cartController.prueba);
+
+
 
 
 

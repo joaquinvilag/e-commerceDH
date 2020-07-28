@@ -6,7 +6,6 @@ var sequelize = db.sequelize;
 let { check, validationResult, body} = require('express-validator');
 const { brotliDecompress } = require('zlib');
 
-
 const userControllers = {
     showLoginForm: (req,res,next)=>{
         res.render("formLogin");
@@ -26,7 +25,7 @@ const userControllers = {
                     req.session.usuarioLogueado = user[0];
                     if(req.body.recordame != undefined) {
                          res.cookie('recordame', user[0].email, {maxAge: 60000})
-                     };
+                     };            
                      res.redirect('/users/perfil');
                 } else {
                     return res.render('formLogin', {errors: [
@@ -62,7 +61,8 @@ const userControllers = {
                     console.log("Nuevo Usuario registrado");
                     req.session.usuarioLogueado = user;
                     res.redirect('/users/perfil');
-                })
+                });
+                // db.Cart.create()
             } 
         } else {
             return res.render('formRegister', {errors: errors.errors});

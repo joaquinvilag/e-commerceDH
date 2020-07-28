@@ -202,12 +202,12 @@ html {
     font-weight: bold;
     background: var(--brown);;
     color: #fff;
-    box-shadow: 0 3px 0 rgb(0, 0, 0)
+    transition: 0.5s;
   }
   
   .btn:hover {
-    box-shadow: 0 3px 0 rgba(59,154,198, 0);
-    color: rgb(77, 235, 190);
+    background-color: #cb997e;
+    color: #fff;
   }
   
   .btn-update {
