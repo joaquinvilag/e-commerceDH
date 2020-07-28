@@ -20,15 +20,38 @@
                 <li class="nav_li">
                     <a href="/hamburguesas" class="nav_a">Hamburguesas</a>
                 </li>
-                <li class="nav_li">
-                    <i class="fas fa-shopping-cart nav_icon"><a href="/cart" class="nav_a">carrito</a></i>
+                <% if(typeof user  != 'undefined' && admin == 1){ %>
+                    <li class="nav_li">
+                        <i class="fas fa-plus nav_icon"><a href="/products/create/admin" class="nav_a">agregar producto</a></i>
                     
-                </li>
-                <li class="nav_li">
-                    <i class="fas fa-user-circle nav_icon"><a href="/users/login" class="nav_a">Login/Registro</a></i>
+                    </li>
+                    <li class="nav_li">
+                        <i class="fas fa-user-circle nav_icon"><a href="/users/perfil" class="nav_a">Perfil</a></i>
                     
-                </li>
-                
+                    </li>
+                    <li class="nav_li">
+                        <i class="fas fa-sign-out-alt nav_icon"><a href="/users/log-out" class="nav_a">Salir</a></i>
+                    
+                    </li>
+                <% } else if (typeof user != 'undefined' && admin == 0) { %>
+                    <li class="nav_li">
+                        <i class="fas fa-shopping-cart nav_icon"><a href="/cart" class="nav_a">Carrito</a></i>
+                        
+                    </li>
+                    <li class="nav_li">
+                        <i class="fas fa-user-circle nav_icon"><a href="/users/perfil" class="nav_a">Perfil</a></i>
+                        
+                    </li>
+                    <li class="nav_li">
+                        <i class="fas fa-sign-out-alt nav_icon"><a href="/users/log-out" class="nav_a">Salir</a></i>
+                        
+                    </li>
+                <% } else { %>
+                    <li class="nav_li">
+                        <i class="fas fa-user-circle nav_icon"><a href="/users/login" class="nav_a">Login/Registro</a></i>
+                        
+                    </li>
+                <% } %>
             </ul>
         </nav>
         <div class="flex-logo-mobile">
@@ -59,7 +82,7 @@
                 <a href="/users/perfil" class="font_log">
                     <i class="fas fa-user-circle icon_login"></i>
                     <br>
-                    <p><%=user.name%></p>
+                    <p class="log_menu_p"><%=user.name%></p>
                 </a>
             </div>
         
@@ -67,24 +90,38 @@
                 <a href="/products/create/admin" class="font_log">
                     <i class="fas fa-plus icon_login"></i>
                     <br>    
-                    <p>Agregar</p> 
+                    <p class="log_menu_p">Agregar</p> 
+                </a>
+            </div>
+            <div class="flex_items_login">
+                <a href="/cart/log-out" class="font_log">
+                    <i class="fas fa-sign-out-alt icon_login"></i>
+                    <br>    
+                    <p class="log_menu_p">Salir</p> 
                 </a>
             </div>
         </div>
         <% } else if (typeof user != 'undefined' && admin == 0) { %>
-        <div class="flex_container_login">
+        <div class="flex_container_login with_logout">
             <div class="flex_items_login">           
-                <a href="/users/perfil" class="font_log">
+                <a href="users/perfil" class="font_log desplegar">
                     <i class="fas fa-user-circle icon_login"></i>
                     <br>
-                    <p><%= user.name %></p>
+                    <p class="log_menu_p"><%= user.name %></p>
                 </a>
             </div>
             <div class="flex_items_login">
                 <a href="/cart" class="font_log">
                     <i class="fas fa-shopping-cart icon_login"></i>
                     <br>    
-                    <p>Carrito</p> 
+                    <p class="log_menu_p">Carrito</p> 
+                </a>
+            </div>
+            <div class="flex_items_login">
+                <a href="/users/log-out" class="font_log">
+                    <i class="fas fa-sign-out-alt icon_login"></i>
+                    <br>    
+                    <p class="log_menu_p">Salir</p> 
                 </a>
             </div>
         </div>
@@ -94,14 +131,14 @@
                     <a href="/users/login" class="font_log">
                         <i class="fas fa-user-circle icon_login"></i>
                         <br>
-                        <p>Login</p>
+                        <p class="log_menu_p">Login</p>
                     </a>
                 </div>
                 <div class="flex_items_login">
                     <a href="/cart" class="font_log">
                         <i class="fas fa-shopping-cart icon_login"></i>
                         <br>    
-                        <p>Carrito</p> 
+                        <p class="log_menu_p">Carrito</p> 
                     </a>
                 </div>
             </div>
@@ -135,7 +172,6 @@
             </ul>
         </div>
     </nav>
-
 </header>
 
  

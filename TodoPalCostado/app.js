@@ -38,6 +38,7 @@ app.use(function(req, res, next){
     res.locals.total = req.session.total;
   } else {
     res.locals.cart = [];
+    res.locals.total = undefined;
   }
   next();
 });

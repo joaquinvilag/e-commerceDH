@@ -67,6 +67,10 @@ router.post('/register', upload.any(), [
 router.get('/perfil', authMiddleware, usersController.showProfile);
 
 
+// Rutas de Logout
+router.get('/log-out', usersController.logout);
+
+
 
 
 module.exports = router;

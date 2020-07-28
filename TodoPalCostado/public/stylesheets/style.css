@@ -197,22 +197,60 @@ nav ul li a{
       flex-wrap: wrap;
       justify-content: space-between;
       align-content: center;
+      position: relative;
   }
   .icon_items_login{
-      display: flex;   
+      display: flex; 
+      position: relative;  
   }
   .icon_login{
       font-size: 30px;
       margin-bottom: 6px;
       padding-left: 7px;
   }
-  .font_log{
+  
+  li.sub_menu_li{
+    text-decoration: none;
+  }
+  a.sub_menu_a{
+    text-decoration: none;
+    /* display: block; */
+  }
+ 
+  a.font_log{
       font-weight: bold;
       display: inline-block;
+      color: var(--brown);
+      text-decoration: none;
+      transition: 0.3s;
+      cursor: pointer;
   }
   .flex_container_login{
     margin-top: 14px;
   }
+  a.font_log:hover{
+    color:#edc4b3;
+  }
+  ul.sub_menu_ul {
+    list-style: none;
+    background-color: #f8f9fa;
+    text-align: center;
+    width: 180px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    padding: 6px 15px;
+    position: absolute;
+    z-index: 1000;
+    right: 10px;
+    top: 76px;
+    transition: 0.5s;
+  }
+  .with_logout{
+    width: 180px;
+  }
+ 
+
   
 
 /*=== Menu Options ===*/
@@ -254,16 +292,16 @@ nav ul li a{
     justify-content: center;
     text-align: center;
   }
-  a{
+  a.a_menu_li{
       color: var(--brown);
       text-decoration: none;
       transition: 0.5s;
   }
-  nav ul li a:hover{
+  nav ul li a.a_menu_li:hover{
     text-decoration: none;
     color:#ffffff;
     font-size: 18px;
-
+    z-index: 100;
   }
 }
 
@@ -300,6 +338,7 @@ nav ul li a{
   .flex_container_login{
     margin-top: 14px;
   }
+  
 } 
 
 /*========================================= End Header =========================================*/

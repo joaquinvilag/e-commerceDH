@@ -84,6 +84,10 @@ const userControllers = {
             }
         })
         console.log(user);
+    },
+    logout: (req, res, next) => {
+        req.session.usuarioLogueado = undefined;
+        res.redirect('/')
     }
 }
 
