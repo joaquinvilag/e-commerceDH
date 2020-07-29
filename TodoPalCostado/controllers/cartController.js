@@ -129,7 +129,7 @@ const controller = {
             }
         });
         console.log("¡Compra finalizada, gracias por confiar en nosotros!");
-        res.redirect('/');
+        res.render('users/msj');
     },
 
 

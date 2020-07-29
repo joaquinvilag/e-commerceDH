@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/stylesheets/perfil.css">
+    <link rel="stylesheet" href="/stylesheets/perfil-edicion.css">
     <title>Perfil</title>
 </head>
 <body>
@@ -10,6 +10,7 @@
     <%- include('../partials/header.ejs') %>
     <!-- =================== -->
     <% if(user != undefined){ %>
+        <div class="container">
     <form action="/users/perfil-edicion" method="post">
     <section class="section-1">
         <p class="section1-p1">Mis Datos</p>
@@ -32,7 +33,9 @@
         <p class="section3-p4">Edad: </p>
         <input type="number" class="field_formEdit" id="birth_date" name="birth_date">
     </section>
+    <button type="submit" class="btn-submit">Guardar Cambios</button>
     </form>
+    </div>
     <% } %>
 
     <!--====== Footer =======-->

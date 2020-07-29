@@ -85,7 +85,7 @@ const userControllers = {
         })
         console.log(user);
     },
-<<<<<<< HEAD
+
     editProfile: function(req,res,next){
         res.render('users/perfil-edicion')
         // var user;
@@ -107,12 +107,11 @@ const userControllers = {
 // })
 //     res.redirect("users/perfil")
 //     }
-=======
+
     logout: (req, res, next) => {
         req.session.usuarioLogueado = undefined;
         res.redirect('/')
     }
->>>>>>> fc76c87b5dbcd595c7d0103583a197ce46c66bcf
 }
 
 

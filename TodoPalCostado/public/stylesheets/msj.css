@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+div.div_msj{
+    width: 100%;
+    height: 600px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1.div_msj{
+    font-size: 18px;
+    margin: auto;
+}
