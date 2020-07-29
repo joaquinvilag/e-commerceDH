@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 var db = require('../database/models');
 var sequelize = db.sequelize;
 let { check, validationResult, body} = require('express-validator');
@@ -20,7 +20,7 @@ const userControllers = {
                 }
             })
             .then(function(user){
-                if(bcrypt.compareSync(req.body.password, user[0].password)){
+                if(bcryptjs.compareSync(req.body.password, user[0].password)){
         
                     req.session.usuarioLogueado = user[0];
                     if(req.body.recordame != undefined) {
@@ -50,12 +50,12 @@ const userControllers = {
             var user = {
                 name: req.body.name,
                 last_name: req.body.last_name,
-                password: bcrypt.hashSync(req.body.password,10),
+                password: bcryptjs.hashSync(req.body.password,10),
                 email: req.body.email,
                 avatar: req.files[0].filename,
                 admin: 0
             };    
-            if(bcrypt.compareSync(req.body.confirmPassword, user.password)){
+            if(bcryptjs.compareSync(req.body.confirmPassword, user.password)){
                 db.User.create(user)
                 .then(user =>  {  
                     console.log("Nuevo Usuario registrado");

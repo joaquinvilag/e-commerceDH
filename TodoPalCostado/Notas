@@ -1,0 +1,10 @@
+"/frutos-secos"
+"category/:id/:nombre"
+
+where:{
+    id: req.params.id
+}
+
+.then(products) =>{
+    res.render("products", {products})
+})
