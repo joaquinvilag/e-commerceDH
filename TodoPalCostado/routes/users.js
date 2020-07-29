@@ -88,7 +88,7 @@ router.get('/perfil-edicion', authMiddleware, userControllers.editProfile);
 // }).withMessage('Usuario ya existente')], usersControllers.updateProfile);
 
 
-// Rutas de Logout
+// Rutas de Logout que anda perfectamente!!!!!!!!!!!! 
 router.get('/log-out', usersController.logout);
 
 
