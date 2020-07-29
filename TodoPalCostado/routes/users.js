@@ -8,6 +8,7 @@ var guestMiddleware = require('../middlewares/guestMiddleware');
 var authMiddleware = require('../middlewares/authMiddleware');
 const usersController = require('../controllers/usersController');
 const db = require('../database/models');
+const userControllers = require('../controllers/usersController');
 
 var storage = multer.diskStorage({
     destination: function (req , file , cb){
@@ -65,6 +66,26 @@ router.post('/register', upload.any(), [
 
   // Datos de perfil
 router.get('/perfil', authMiddleware, usersController.showProfile);
+router.get('/perfil-edicion', authMiddleware, userControllers.editProfile);
+// router.post('/perfil-edicion',[
+//   check('name').isLength({min: 2}).withMessage('El campo Nombre no puede estar vacio'),
+//   check('email').isEmail().withMessage('Email incorrecto'),
+
+//   body('email').custom(function(value){
+//   db.User.findAll({
+//     where: {
+//       email: value
+//     }  
+//   })
+//   .then(function(user){
+//     console.log(user)
+//     console.log(value)
+//     if(user.email === value){
+//       return false;
+//     }
+//   })
+//   return true;
+// }).withMessage('Usuario ya existente')]);
 
 
 // Rutas de Logout

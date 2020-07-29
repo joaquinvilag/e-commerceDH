@@ -85,10 +85,34 @@ const userControllers = {
         })
         console.log(user);
     },
+<<<<<<< HEAD
+    editProfile: function(req,res,next){
+        res.render('users/perfil-edicion')
+        // var user;
+        // db.User.findByPk(req.session.usuarioLogeado.iduser)
+
+    },
+//     updateProfile: function(req,res,next){
+//         var user;
+//         db.User.update({//"Que quiero actualizar
+//                         //"nombre,edad,email"
+//     email:req.body.email,
+//     name:req.body.name,
+//     birth_date:req.body.birth_date
+
+// },{
+//     where: {
+//         id: req.params.id //user.id?
+//     }
+// })
+//     res.redirect("users/perfil")
+//     }
+=======
     logout: (req, res, next) => {
         req.session.usuarioLogueado = undefined;
         res.redirect('/')
     }
+>>>>>>> fc76c87b5dbcd595c7d0103583a197ce46c66bcf
 }
 
 

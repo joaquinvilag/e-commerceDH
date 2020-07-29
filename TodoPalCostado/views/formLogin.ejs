@@ -20,11 +20,6 @@
                   <a class="a-form-register off-btn" href="/users/register">Registrarse</a>
                 </h4>
             </div>
-            <!-- validaciones frontEnd -->
-            <div class="errors">
-                
-            </div>
-            <!-- validaciones frontEnd -->
             <form action="/users/login" method="POST" class="form_register_date">
                 <!-- <div class="div_form_input"> -->
                 <div class="group_form_register">
@@ -40,6 +35,11 @@
                     Recordame
                     <input type="checkbox" name="recordame" ><br>
                 </div>
+                <!-- validaciones frontEnd -->
+                 <div class="errors"></div>
+                
+                </div>
+                <!-- validaciones frontEnd -->
                 <% if (typeof errors != 'undefined'){ %>
                     <p style="color:red">ERROR</p>
                     <ul>
