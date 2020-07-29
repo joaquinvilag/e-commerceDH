@@ -10,25 +10,29 @@
     <%- include('../partials/header.ejs') %>
     <!-- =================== -->
     <% if(user != undefined){ %>
+    <form action="/users/perfil-edicion" method="post">
     <section class="section-1">
         <p class="section1-p1">Mis Datos</p>
         <div class="editar-cuenta">
             
             <p class="section1-p2">Datos de cuenta:</p>
-           <a href="/users/perfil-edicion"> <button type="submit" class="accountEdit-btn" name="accountEdit">Editar</button> </a>
         </div>
     </section>
     
     <section class="section-2">
-        <p class="section2-p2">Email: <%=user.email%></p>
+        <p class="section2-p2">Email:</p>
+        <input type="text" class="field_formEdit" id="email" name="email">
     </section>
     <section class="section-3">
         <div class="editar-usuario">
             <p class="section3-p1">Datos personales:</p>
         </div>
-        <p class="section3-p2">Nombre: <%=user.name%></p>
+        <p class="section3-p2">Nombre:</p>
+        <input type="text" class="field_formEdit" id="name" name="name">
         <p class="section3-p4">Edad: </p>
+        <input type="number" class="field_formEdit" id="birth_date" name="birth_date">
     </section>
+    </form>
     <% } %>
 
     <!--====== Footer =======-->
