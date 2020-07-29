@@ -75,9 +75,15 @@
     border: none;
     border-bottom: 1px solid rgba(156, 156, 156, 0.664);
   }
-  .errors p{
+  .ul_error{
+    width: 100%;
     background-color: red;
-    font-size: 40px;
+    font-size: 16px;
+    text-decoration: none;
+    left: 6px;
+  }
+  .li_error{
+    text-decoration: none;
   }
   
   .center_content_btn_register{

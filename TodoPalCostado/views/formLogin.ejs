@@ -40,11 +40,10 @@
                 
                 </div>
                 <!-- validaciones frontEnd -->
-                <% if (typeof errors != 'undefined'){ %>
-                    <p style="color:red">ERROR</p>
-                    <ul>
+                <% if (typeof errors != 'undefined'){ %>   
+                    <ul class="ul_error">
                     <% for (let i = 0; i < errors.length; i++) { %>
-                        <li>
+                        <li class="li_error"> 
                             <%= errors[i].msg %>
                         </li>
                     <% } %>
@@ -64,7 +63,7 @@
     <!--====== Footer =======-->
     <%- include('partials/footer') %>
     <!--===== End Footer =======-->
-    <script src="/javascripts/validation-register.js"></script>
+    <script src="/javascripts/validation-login.js"></script>
     
 
 
