@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-07-2020 a las 08:19:19
+-- Tiempo de generación: 29-07-2020 a las 09:21:28
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -35,13 +35,6 @@ CREATE TABLE `cart` (
   `total` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `cart`
---
-
-INSERT INTO `cart` (`idcart`, `FK_user_id`, `state`, `purchase_date`, `total`) VALUES
-(1, 2, 'close', '0000-00-00 00:00:00', '2226');
-
 -- --------------------------------------------------------
 
 --
@@ -55,15 +48,6 @@ CREATE TABLE `cart_products` (
   `quantity` int(11) NOT NULL,
   `price` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `cart_products`
---
-
-INSERT INTO `cart_products` (`idcart_products`, `FK_cart_id`, `FK_products_id`, `quantity`, `price`) VALUES
-(21, 1, 1, 1, '450'),
-(22, 1, 2, 1, '890'),
-(23, 1, 5, 1, '500');
 
 -- --------------------------------------------------------
 
@@ -210,13 +194,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `idcart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idcart` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `cart_products`
 --
 ALTER TABLE `cart_products`
-  MODIFY `idcart_products` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `idcart_products` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `category`
