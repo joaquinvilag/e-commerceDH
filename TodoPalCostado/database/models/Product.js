@@ -26,7 +26,7 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.DOUBLE
         },
         detail: {
-            type: dataTypes.INTEGER
+            type: dataTypes.STRING
         }
     }
     var config = {

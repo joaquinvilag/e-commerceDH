@@ -14,7 +14,7 @@
     <!-- =================== -->
     
     <section>
-      <form action="#" class="form">
+      <form action="/cart/finalizar-compra" class="form" method="POST">
         <div class="container-cart">
           <div class="heading">
             <% if( typeof cart == []) { %>
@@ -29,8 +29,6 @@
   
           
           <div class="cart2 transition is-open">
-            
-            <a href="#" class="btn btn-update">Comprar</a>
             
             
             <div class="table">
@@ -63,7 +61,7 @@
                     <p class="total-product"><%=cart[i].price%></p>
                   </div>
                   <div>
-                    <a href="/cart/remove-from-cart/<%=cart[i].name%>">
+                    <a href="/cart/remove-from-cart/<%=cart[i].idproducts%>">
                       <i class=" col fas fa-times-circle"></i>
                     </a>
                   </div>
@@ -74,21 +72,22 @@
                <div class="tf">
                  <div class="row layout-inline">
                    <div class="col">
-                     <p>IVA :</p>
+                     <p>IVA : <%=iva%></p>
                    </div>
                    <div class="col"></div>
                  </div>
                   <div class="row layout-inline">
                    <div class="col">
-                     <p>Total :</p>
+                     <p>Total : <%=total%></p>
                    </div>
                    <div class="col"></div>
                  </div>
               
               </div>         
           </div>
-            
-            <a href="#" class="btn btn-update">Comprar</a>
+              <button type="submit" class="btn btn-update">Comprar</button>
+            <!-- <a href="/cart/finalizar-compra" class="btn btn-update">Comprar</a> -->
+
         <% } %>
         </div>
       </form>

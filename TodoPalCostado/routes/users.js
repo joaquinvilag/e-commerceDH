@@ -88,6 +88,10 @@ router.get('/perfil-edicion', authMiddleware, userControllers.editProfile);
 // }).withMessage('Usuario ya existente')]);
 
 
+// Rutas de Logout
+router.get('/log-out', usersController.logout);
+
+
 
 
 module.exports = router;

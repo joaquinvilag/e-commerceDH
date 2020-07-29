@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-07-2020 a las 19:34:22
+-- Tiempo de generación: 29-07-2020 a las 01:21:26
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -35,6 +35,13 @@ CREATE TABLE `cart` (
   `total` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `cart`
+--
+
+INSERT INTO `cart` (`idcart`, `FK_user_id`, `state`, `purchase_date`, `total`) VALUES
+(1, 2, 'close', '0000-00-00 00:00:00', '2226');
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +55,15 @@ CREATE TABLE `cart_products` (
   `quantity` int(11) NOT NULL,
   `price` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cart_products`
+--
+
+INSERT INTO `cart_products` (`idcart_products`, `FK_cart_id`, `FK_products_id`, `quantity`, `price`) VALUES
+(21, 1, 1, 1, '450'),
+(22, 1, 2, 1, '890'),
+(23, 1, 5, 1, '500');
 
 -- --------------------------------------------------------
 
@@ -103,16 +119,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`idproducts`, `name`, `EAN`, `FK_category_id`, `descr`, `images`, `price`, `detail`) VALUES
-(1, 'Sauce - Chili', 2147483647, 2, 'Implant of single ventricular (extracorporeal) external heart assist system', 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff', '100', 'oferta'),
-(2, 'Huck White Towels', 2147483647, 2, 'Delayed opening of other enterostomy', 'http://dummyimage.com/250x250.jpg/cc0000/ffffff', '100', 'oferta'),
-(3, 'Cake - Mini Cheesecake', 2147483647, 1, 'Other biopsy of ovary', 'http://dummyimage.com/250x250.jpg/cc0000/ffffff', '100', 'oferta'),
-(4, 'Oil - Truffle, White', 2147483647, 1, 'Electroencephalogram', 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff', '100', 'oferta'),
-(5, 'Cheese Cheddar Processed', 2147483647, 3, 'Combined alcohol and drug detoxification', 'http://dummyimage.com/250x250.jpg/dddddd/000000', '100', 'oferta'),
-(6, 'Bread - Hot Dog Buns', 2147483647, 2, 'Insertion of bone growth stimulator, radius and ulna', 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff', '100', 'oferta'),
-(7, 'Fish - Bones', 2147483647, 2, 'Lysis of cortical adhesions', 'http://dummyimage.com/250x250.jpg/dddddd/000000', '100', 'oferta'),
-(8, 'Oil - Coconut', 2147483647, 3, 'Other diagnostic procedures on heart and pericardium', 'http://dummyimage.com/250x250.jpg/ff4444/ffffff', '100', 'oferta'),
-(9, 'Halibut - Steaks', 2147483647, 2, 'Intracranial ventricular shunt or anastomosis', 'http://dummyimage.com/250x250.jpg/ff4444/ffffff', '100', 'oferta'),
-(10, 'Wine - Barossa Valley Estate', 2147483647, 1, 'Injection of locally-acting therapeutic substance into trachea', 'http://dummyimage.com/250x250.jpg/dddddd/000000', '100', 'oferta');
+(1, 'Almendras ', NULL, 1, 'Almendras 100% Naturales y de la mejor calidad', 'almendras.jpg', '450', 'mas-vendido'),
+(2, 'Avellanas Mendocinas', NULL, 1, 'Avellanas Mendocinas 100% naturales y la mas alta calidad', 'avellanas.jpg', '890', 'oferta'),
+(3, 'Castañas de Caju', NULL, 1, 'Castañas de Caju 100% naturales y de la mas alta calidad', 'castañasdecaju.jpg', '750', 'oferta'),
+(4, 'Ciruelas desecadas', NULL, 2, 'Ciruelas desecadas 100% naturales, y de alta calidad.', 'ciruelasdesecadas.jpg', '1100', 'mas-vendido'),
+(5, 'Hamburguesas de garvanzo', NULL, 3, 'Hamburguesas 100% naturales, y de alta calidad.', 'Hamburguesasgarbanzos.jpeg', '500', 'mas-vendido'),
+(6, 'Hamburguesas de lenteja', NULL, 3, 'Hamburguesas de lenteja 100% naturales, y de alta calidad.', 'hamburguesaslentejas.jpeg', '450', 'oferta'),
+(7, 'Hamburguesas de soja', NULL, 3, 'Hamburguesas de lenteja 100% naturales, y de alta calidad.', 'hamburguesassoja.jpg', '840', 'oferta'),
+(8, 'Nueces', NULL, 1, 'Nueces 100% naturales, y de alta calidad.', 'nueces.jpg', '600', 'oferta'),
+(9, 'Pasas de uva', NULL, 2, 'Pasas de uva 100% naturales, y de alta calidad.', 'pasasdeuva.jpg', '900', 'oferta'),
+(10, 'Tomates secos ', NULL, 2, 'Tomates secos 100% naturales, y de alta calidad.', 'tomatesecos.jpg', '400', 'oferta');
 
 -- --------------------------------------------------------
 
@@ -138,15 +154,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`iduser`, `name`, `last_name`, `address`, `phone`, `email`, `birth_date`, `password`, `avatar`, `admin`) VALUES
-(1, 'Tori', 'Greger', '978 Buell Way', 332, 'tgreger0@miitbeian.gov.cn', '0000-00-00', '3gonG0shi', 'https://robohash.org/perferendislaudantiumest', 0),
-(2, 'Edin', 'Coleson', '4 Oneill Pass', NULL, 'ecoleson1@wiley.com', '0000-00-00', 'zBLk2IO3', 'https://robohash.org/velitetalias.png?size=50', 0),
-(3, 'Steffen', 'Fearenside', '81290 Declaration Center', NULL, 'sfearenside2@alibaba.com', '0000-00-00', 'BoA7EHc9fsbE', 'https://robohash.org/nonrerumsimilique.png?si', 0),
-(4, 'Gerri', 'Canada', '8937 Portage Road', 673, 'gcanada3@tinypic.com', '0000-00-00', 'OtSuVTLbRz', 'https://robohash.org/estautautem.bmp?size=50x', 0),
-(5, 'Janeta', 'McGuffie', '6 Roxbury Place', NULL, 'jmcguffie4@vimeo.com', '0000-00-00', 'EWRYxvyKjKR', 'https://robohash.org/laudantiumvelitquo.jpg?s', 0),
-(6, 'edgar', 'vargas', NULL, NULL, 'edgar@gmail.com', NULL, '$2b$10$47Nl2HFxX89MXTQw.dGpwu1334A5YNMBu89Dkx0n5n7DHTUC/cWQK', 'avataravatar1594007554873.jpg', 1),
-(7, 'gustavo', 'petrov', NULL, NULL, 'guri@gmail.com', NULL, '$2b$10$4lYRWMl8hkFomoib3blQlODnFcfnq7T/amupt3X2G0Vn53q4bC2WS', 'avataravatar1594007952617.jpeg', 0),
-(9, 'Titan', 'Vargas', NULL, NULL, 'titan@gmail.com', NULL, '$2b$10$Q0fYUeMIAMb2flWyPssjCuIOeU00R0BLaq6WJHskjFyKmhE7TKaei', 'avataravatar1594862136113.jpg', 0),
-(10, 'Juan', 'Cho', NULL, NULL, 'juan@gmail.com', NULL, '$2b$10$KNKxlX.H.Yg432N8vHuxp.K3uN4rgT1dpBVxaxUYrzdaQ.oQqLjMy', 'avataravatar1594863261134.jpg', 0);
+(1, 'Admin', 'Admin', NULL, NULL, 'admin@gmail.com', NULL, '$2b$10$R4FfVRYN.Ynop/se4REvdeZq7N47cHCJ9p1SsR.X64r7LWcIGK0U2', 'avataravatar1595971613259.jpg', 1),
+(2, 'Client', 'Client', NULL, NULL, 'client@gmail.com', NULL, '$2b$10$kc2WaakUvn.YznrSa8CgneyibrqytLCZA5i2Z1zWGjn0iIfITPyHq', 'avataravatar1595971775991.jpg', 0);
 
 --
 -- Índices para tablas volcadas
@@ -201,13 +210,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `idcart` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `cart_products`
 --
 ALTER TABLE `cart_products`
-  MODIFY `idcart_products` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcart_products` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `category`
@@ -225,13 +234,13 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `idproducts` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idproducts` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

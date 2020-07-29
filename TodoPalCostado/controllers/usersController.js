@@ -6,7 +6,6 @@ var sequelize = db.sequelize;
 let { check, validationResult, body} = require('express-validator');
 const { brotliDecompress } = require('zlib');
 
-
 const userControllers = {
     showLoginForm: (req,res,next)=>{
         res.render("formLogin");
@@ -26,7 +25,7 @@ const userControllers = {
                     req.session.usuarioLogueado = user[0];
                     if(req.body.recordame != undefined) {
                          res.cookie('recordame', user[0].email, {maxAge: 60000})
-                     };
+                     };            
                      res.redirect('/users/perfil');
                 } else {
                     return res.render('formLogin', {errors: [
@@ -62,7 +61,8 @@ const userControllers = {
                     console.log("Nuevo Usuario registrado");
                     req.session.usuarioLogueado = user;
                     res.redirect('/users/perfil');
-                })
+                });
+                // db.Cart.create()
             } 
         } else {
             return res.render('formRegister', {errors: errors.errors});
@@ -85,6 +85,7 @@ const userControllers = {
         })
         console.log(user);
     },
+<<<<<<< HEAD
     editProfile: function(req,res,next){
         res.render('users/perfil-edicion')
         // var user;
@@ -106,6 +107,12 @@ const userControllers = {
 // })
 //     res.redirect("users/perfil")
 //     }
+=======
+    logout: (req, res, next) => {
+        req.session.usuarioLogueado = undefined;
+        res.redirect('/')
+    }
+>>>>>>> fc76c87b5dbcd595c7d0103583a197ce46c66bcf
 }
 
 

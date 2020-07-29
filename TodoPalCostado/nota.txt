@@ -1,0 +1,8 @@
+usuario en session
+producto agregar al carrito
+
+
+1- buscar un carrito de ese usuario logueado que este abierto.
+2- preguntar si existe ese carrito o no.
+3- si existe tomar el id.
+4- sino existe crear un carrito abierto para ese usuario y tomar el id

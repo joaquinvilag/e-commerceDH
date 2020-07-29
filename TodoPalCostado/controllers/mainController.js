@@ -5,16 +5,23 @@ const db = require('../database/models');
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
-const pdtosMasVendidos = products.filter(pdto => pdto.detail == 'mas-vendido');
+// const pdtosMasVendidos = products.filter(pdto => pdto.detail == 'mas-vendido');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 //rutas de home y search
 const controller = {
     root: function(req, res){
-        res.render("home", {
-            "pdtosMasVendidos": pdtosMasVendidos
+        db.Product.findAll({
+            where: {
+                detail: "mas-vendido"
+              },
+            include: [{association: "category"}, {association: "image"}]
+        })
+        .then(function(products){
+            res.render("home", { "pdtosMasVendidos": products });
         });
+        
     },
     search: function(req, res){
         res.send("Resultados de busqueda");
