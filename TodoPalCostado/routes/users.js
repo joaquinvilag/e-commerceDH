@@ -85,7 +85,7 @@ router.get('/perfil-edicion', authMiddleware, userControllers.editProfile);
 //     }
 //   })
 //   return true;
-// }).withMessage('Usuario ya existente')]);
+// }).withMessage('Usuario ya existente')], usersControllers.updateProfile);
 
 
 // Rutas de Logout
