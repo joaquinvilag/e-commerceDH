@@ -97,12 +97,12 @@ const userControllers = {
         name:req.body.name,
         last_name:req.body.last_name
 
-},{
-    where: {
-        id: req.session.usuarioLogueado.iduser
-    }
-})
-    res.redirect("users/perfil")
+        },{
+            where: {
+                id: req.session.usuarioLogueado.iduser
+            }
+        })
+        res.redirect("users/perfil")
     },
 
     logout: (req, res, next) => {

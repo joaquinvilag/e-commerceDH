@@ -18,4 +18,5 @@ div.div_msj{
 h1.div_msj{
     font-size: 18px;
     margin: auto;
+    text-decoration: none;
 }

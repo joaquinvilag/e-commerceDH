@@ -38,6 +38,7 @@ header{
   background-color: var(--light-green);
   opacity: .8;
   z-index: 999;
+  top: 60px;
 }
 
 .menu_bar{
@@ -45,7 +46,8 @@ header{
   display: block;
   width: 100%;
   height: 60px;
-
+  position: fixed;
+  z-index: 99999;
 }
 .fa-bars{
   display: block;
@@ -97,8 +99,10 @@ nav ul li a{
 .flex-logo-mobile{
   display: flex;
   width: 100%;
-  height: 180px;
+  max-height: 300px;
   justify-content: center;
+  padding-top: 50px;
+  border-bottom: 1px solid #000000;
 }
 .logo-mobile{
   width: 200px;
@@ -194,7 +198,7 @@ nav ul li a{
   .flex_container_login{
       width: 200px;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-content: center;
       position: relative;
       left: 30px;
@@ -226,11 +230,12 @@ nav ul li a{
       text-decoration: none;
       transition: 0.3s;
       cursor: pointer;
+      margin-left:20px;
   }
   .flex_container_login{
     margin-top: 14px;
   }
-  a.font_log:hover{
+  .font_log:hover{
     color:#edc4b3;
   }
   
@@ -262,14 +267,12 @@ nav ul li a{
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 38px;
+    line-height: 49px;
 
   }
   
   .menu_li{
       display: inline-block;
-      padding-top: 7px;
-      padding-bottom: 7px;
       min-width: 200px;
       /* border: 1px solid black; */
   }
@@ -283,7 +286,12 @@ nav ul li a{
   a.a_menu_li{
       color: var(--brown);
       text-decoration: none;
-      transition: 0.5s;
+      transition: 0.3s;
+  }
+  a.a_menu_li:hover{
+    color:#edc4b3;
+    background: rgba(65, 201, 162, 0.438);
+    font-size: 16px;
   }
 }
 

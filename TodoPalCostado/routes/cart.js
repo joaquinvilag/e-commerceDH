@@ -24,6 +24,13 @@ router.get('/remove-from-cart/:id', cartController.removeFromCart);
 router.post('/finalizar-compra', cartController.purchasePayment);
 
 
+
+router.get('/qty-minus/:id', cartController.qtyMinus);
+
+router.get('/qty-plus/:id', cartController.qtyPlus);
+
+
+
 router.get('/prueba', cartController.prueba);
 
 

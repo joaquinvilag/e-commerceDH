@@ -13,6 +13,7 @@ h6.subtitle-banner {
 h2.subtitle {
     text-align: center;
     border-bottom: #9EFFF2 solid 1px;
+    margin-top: 5%;
 }
 
 p {
@@ -56,7 +57,7 @@ article.product {
     border-radius: 10px;
     margin: 2%;
     padding: 1%;
-    width: 100%;
+    width: 90%;
     -webkit-box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.58);
     -moz-box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.58);
     box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.58);
@@ -188,7 +189,7 @@ p.divider-text {
     }
 
     .btn.btn-outline-success {
-        width: 20%;
+        width: 100%;
     }
     
     article.product {
@@ -233,7 +234,7 @@ p.divider-text {
     }
 
     div.desc {
-        width: 40%;
+        width: 30%;
         align-items: center;
     }
 
@@ -249,7 +250,7 @@ p.divider-text {
     }
 
     .btn.btn-outline-success {
-        width: 20%;
+        width: 100%;
     }
 
     article.product {
