@@ -5,6 +5,8 @@ var db = require('../database/models');
 var sequelize = db.sequelize;
 let { check, validationResult, body} = require('express-validator');
 const { brotliDecompress } = require('zlib');
+const { request } = require('http');
+const Favoritos = require('../database/models/Favoritos');
 
 const userControllers = {
     showLoginForm: (req,res,next)=>{
@@ -108,7 +110,64 @@ const userControllers = {
     logout: (req, res, next) => {
         req.session.usuarioLogueado = undefined;
         res.redirect('/')
-    }
+    },
+    addFavourite: (req, res, next) => {
+        var userId = req.session.usuarioLogueado.iduser;
+        var productId = parseInt(req.params.id);
+        // var encontre = true;
+        db.Favoritos.findAll({
+            where: {
+                FK_iduser: userId,
+                FK_idproduct: productId
+            }
+        })
+        .then(products => {
+            // for(var i = 0; i < products.length; i++){
+            //     if(products[i].FK_idproduct === productId){
+            //         res.redirect('http://localhost:3000/users/favoritos');
+            //     } else {
+            //         encontre = false;
+            //     }
+            // }
+            console.log(products)
+            if(products.length == 0){
+                var productAdd = {
+                    FK_iduser: userId,
+                    FK_idproduct: productId
+                };
+                db.Favoritos.create(productAdd)
+                .then(productAdd =>  {  
+                    console.log("producto agregado a la lista de favoritos");
+                    res.redirect('http://localhost:3000/users/favoritos')
+                });
+            } else {
+                res.redirect('http://localhost:3000/users/favoritos')
+            }
+        })
+        
+        
+        
+    },
+    deleteFavourite: (req, res, next) => {
+        db.Favoritos.destroy({
+            where: {
+                FK_iduser: req.session.usuarioLogueado.iduser,
+                FK_idproduct: parseInt(req.params.id)
+            }
+        })
+        res.redirect('/users/favoritos')
+    },
+    listFavourite: (req, res, next) => {
+        db.Favoritos.findAll({
+            where: {
+                FK_iduser: req.session.usuarioLogueado.iduser
+            }, include: [{association: "product"}]
+        })
+        .then(products => {
+            req.session.favoritos = products;  
+            res.render('users/favoritos', {"products": products})
+        })
+    }   
 }
 
 

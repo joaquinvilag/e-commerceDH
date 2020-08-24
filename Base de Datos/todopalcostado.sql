@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-07-2020 a las 09:21:28
+-- Tiempo de generación: 25-08-2020 a las 00:08:29
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -35,6 +35,16 @@ CREATE TABLE `cart` (
   `total` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `cart`
+--
+
+INSERT INTO `cart` (`idcart`, `FK_user_id`, `state`, `purchase_date`, `total`) VALUES
+(1, 2, 'close', '0000-00-00 00:00:00', '605'),
+(2, 2, 'close', '0000-00-00 00:00:00', '1016'),
+(4, 2, 'close', '0000-00-00 00:00:00', '3993'),
+(5, 2, 'open', '0000-00-00 00:00:00', '0');
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +58,17 @@ CREATE TABLE `cart_products` (
   `quantity` int(11) NOT NULL,
   `price` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cart_products`
+--
+
+INSERT INTO `cart_products` (`idcart_products`, `FK_cart_id`, `FK_products_id`, `quantity`, `price`) VALUES
+(1, 1, 5, 1, '500'),
+(10, 2, 7, 1, '840'),
+(32, 4, 1, 4, '1800'),
+(34, 4, 5, 3, '1500'),
+(36, 5, 4, 2, '2200');
 
 -- --------------------------------------------------------
 
@@ -68,6 +89,27 @@ INSERT INTO `category` (`idcategory`, `name`) VALUES
 (1, 'Frutos Secos'),
 (2, 'Frutas Desecadas'),
 (3, 'Hamburguesas');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `favoritos`
+--
+
+CREATE TABLE `favoritos` (
+  `idfav` int(11) NOT NULL,
+  `FK_iduser` int(11) NOT NULL,
+  `FK_idproduct` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `favoritos`
+--
+
+INSERT INTO `favoritos` (`idfav`, `FK_iduser`, `FK_idproduct`) VALUES
+(3, 2, 2),
+(4, 2, 5),
+(19, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -167,6 +209,14 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`idcategory`);
 
 --
+-- Indices de la tabla `favoritos`
+--
+ALTER TABLE `favoritos`
+  ADD PRIMARY KEY (`idfav`),
+  ADD KEY `FK_iduser` (`FK_iduser`),
+  ADD KEY `FK_idproduct` (`FK_idproduct`);
+
+--
 -- Indices de la tabla `images`
 --
 ALTER TABLE `images`
@@ -194,19 +244,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `idcart` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `cart_products`
 --
 ALTER TABLE `cart_products`
-  MODIFY `idcart_products` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcart_products` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `category`
 --
 ALTER TABLE `category`
   MODIFY `idcategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `favoritos`
+--
+ALTER TABLE `favoritos`
+  MODIFY `idfav` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `images`
@@ -242,6 +298,13 @@ ALTER TABLE `cart`
 ALTER TABLE `cart_products`
   ADD CONSTRAINT `cart_products_ibfk_1` FOREIGN KEY (`FK_cart_id`) REFERENCES `cart` (`idcart`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `cart_products_ibfk_2` FOREIGN KEY (`FK_products_id`) REFERENCES `products` (`idproducts`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `favoritos`
+--
+ALTER TABLE `favoritos`
+  ADD CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`FK_iduser`) REFERENCES `user` (`iduser`),
+  ADD CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`FK_idproduct`) REFERENCES `products` (`idproducts`);
 
 --
 -- Filtros para la tabla `images`

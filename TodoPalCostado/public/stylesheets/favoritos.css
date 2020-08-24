@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+.div-tus-fav, .div-fav{
+    font-family: 'Shopper', 'sans-serif';
+    
+}
+.div-tus-fav{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #ced4da;
+}
+.h2-tus-fav{
+    padding-left: 10%;
+    line-height: 30px;
+}
+.container-fav{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.div-fav{
+    width: 100%;
+    height: 120px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #eef0f3;
+    margin: 0px 40px;
+}
+
+.div-fav-img{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div-tit-pre{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 18px;
+}
+.div-remove{
+    width: 20%;
+    height: 40px;
+    /* background: #00b4d8; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+img{
+    width: 100px;
+    border-radius: 5px;
+}
+a.a-fav{
+    text-decoration: none;
+}
+a.a-remove{
+    text-decoration: none;
+    color: #fff;
+    /* margin: 0px 10px; */
+    background: #00b4d8;
+    line-height: 40px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    
+}
+a.a-remove:hover{
+    background: #0096c7;
+    box-shadow: 0px 2px 3px #00b4d8ce;
+}
+
+.p-titulo{
+    font-size: 20px;
+    color: black;
+}
+.p-precio{
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.685);
+}
+
+
+
+@media (min-width: 426px){
+    .div-fav{
+        width: 80%;
+    }
+    .div-fav-img{
+        justify-content: flex-start;
+    }
+    .div-remove{
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 769px){
+    .div-fav{
+        width: 60%;
+    }
+}

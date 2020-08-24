@@ -28,8 +28,11 @@
                 <h1 class="productTitle"><%= product.name %></h1>
                 <p class="price">$ <%= product.price %></p>
                 <p class="format">por Kilogramo</p>
-                <p class="description"> <%= product.descr %>></p>
+                <p class="description"> <%= product.descr %></p>
 
+            </div>
+            <div class="div-fa-star">
+              <a href="/users/add-favoritos/<%=product.idproducts%>" class="a-fa-star"><i class="fas fa-star"></i></a>
             </div>
             <form action="/cart/add-to-cart" method="POST" class="btn-add-cart">
               <input type="hidden" name="id" value="<%=product.idproducts%>">

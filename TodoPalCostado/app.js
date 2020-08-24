@@ -30,6 +30,7 @@ app.use(function(req, res, next){
   if(req.session.usuarioLogueado){
     res.locals.user = req.session.usuarioLogueado;
     res.locals.admin = req.session.usuarioLogueado.admin;
+    res.locals.favoritos = req.session.favoritos;
   } else {
     res.locals.user = undefined;
   }

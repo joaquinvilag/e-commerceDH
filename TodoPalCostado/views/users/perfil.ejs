@@ -10,12 +10,17 @@
     <%- include('../partials/header.ejs') %>
     <!-- =================== -->
     <% if(user != undefined){ %>
+    <div class="div-favo">
+        <a href="/users/favoritos" class="a-favo">Favoritos</a>
+    </div>  
+
     <section class="section-1">
-        <p class="section1-p1">Mis Datos</p>
+        <div style="width: 100%; height: 40px;">
+            <p class="section1-p1">Mis Datos</p>
+        </div>        
         <div class="editar-cuenta">
-            
             <p class="section1-p2">Datos de cuenta:</p>
-           <a href="/users/perfil-edicion"> <button type="submit" class="accountEdit-btn" name="accountEdit">Editar</button> </a>
+           <a href="/users/perfil-edicion"><button type="submit" class="accountEdit-btn" name="accountEdit">Editar</button></a>
         </div>
     </section>
     

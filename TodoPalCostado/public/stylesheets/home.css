@@ -96,6 +96,7 @@ article.product:hover {
 }
 
 article.product {
+    position: relative;
     margin: 100px;
     display: flex;
     justify-content: space-around;
@@ -106,7 +107,39 @@ article.product {
     margin: 2%;
     padding: 1%;
     width: 300px;
-}        
+}
+
+/* Boton favorito */
+.div-fa-star {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 16px;
+    top: 270px;
+    text-decoration: none;
+}
+.a-fa-star{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+i.fa-star{
+    font-size: 24px;
+    color: #808080;
+    padding: 4px;
+    border-radius: 5px;
+}
+.a-fa-star:hover{
+    text-decoration: none;
+}
+.fa-star:hover{
+    
+    color:#646464;
+}
+
+/* end boton favoritos */
 
 article img {
     width: 100%;

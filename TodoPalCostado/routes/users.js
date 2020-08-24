@@ -67,30 +67,17 @@ router.post('/register', upload.any(), [
   // Datos de perfil
 router.get('/perfil', authMiddleware, usersController.showProfile);
 router.get('/perfil-edicion', authMiddleware, userControllers.editProfile);
-// router.post('/perfil-edicion',[
-//   check('name').isLength({min: 2}).withMessage('El campo Nombre no puede estar vacio'),
-//   check('email').isEmail().withMessage('Email incorrecto'),
 
-//   body('email').custom(function(value){
-//   db.User.findAll({
-//     where: {
-//       email: value
-//     }  
-//   })
-//   .then(function(user){
-//     console.log(user)
-//     console.log(value)
-//     if(user.email === value){
-//       return false;
-//     }
-//   })
-//   return true;
-// }).withMessage('Usuario ya existente')], usersControllers.updateProfile);
-
-
-// Rutas de Logout que anda perfectamente!!!!!!!!!!!! 
+// Ruta logout
 router.get('/log-out', usersController.logout);
 
+
+// ruta favoritos
+router.get('/add-favoritos/:id', authMiddleware, userControllers.addFavourite); // Agregar a favoritos
+
+router.get('/delete-favoritos/:id', authMiddleware, usersController.deleteFavourite); // Eliminar de favoritos
+
+router.get('/favoritos', authMiddleware, usersController.listFavourite); // Listado de favoritos
 
 
 

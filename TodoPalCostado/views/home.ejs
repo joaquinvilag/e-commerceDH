@@ -44,6 +44,9 @@
         <p class="description"><%= product.description %></p>
     
       </div>
+      <div class="div-fa-star">
+        <a href="users/add-favoritos/<%=product.idproducts%>" class="a-fa-star"><i class="fas fa-star"></i></a>
+      </div>
       <form action="/cart/add-to-cart" method="POST" class="btn-add-cart">
         <input type="hidden" name="id" value="<%=product.idproducts%>">
         <button type="submit" class="btn btn-outline-success" >Agregar al carrito</button>

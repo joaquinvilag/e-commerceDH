@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/favoritos.css">
+    <title>Favoritos</title>
+</head>
+<body>
+    <!-- ====== Header====== -->
+    <%- include('../partials/header.ejs') %>
+    <!-- =================== -->
+    <div class="div-tus-fav">
+        <h4 class="h2-tus-fav">Mis favoritos</h4>
+    </div>
+    <div class="container-fav">
+    <% for(var i = 0; i < products.length; i++){ %> 
+        <div class="div-fav">
+            <div class="div-fav-img cont">
+                <a href="/products/<%=products[i].FK_idproduct%>" class="a-fav"><img class="img-fav" src="/img/products/<%=products[i].product.images%>" alt=""></a>
+            </div>
+            <div class="div-tit-pre cont">
+                <a href="/products/<%=products[i].FK_idproduct%>" class="a-fav">
+                    <p class="p-titulo"><%=products[i].product.name%></p>
+                    <p class="p-precio">$ <%=products[i].product.price%></p>
+                </a>
+            </div>
+            <div class="div-remove cont">
+                <a href="/users/delete-favoritos/<%=products[i].FK_idproduct%>" class="a-remove">Eliminar</a>
+            </div>   
+        </div>
+    <% } %>
+    </div>
+
+
+
+
+    <!--====== Footer =======-->
+    <%- include('../partials/footer') %>
+    <!--===== End Footer =======-->
+    
+    <%- include('../partials/bootstrap-jq-poppers') %>
+</body>
+</html>
