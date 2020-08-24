@@ -36,7 +36,7 @@ header{
   margin: 0;
   position: fixed;
   background-color: var(--light-green);
-  opacity: .8;
+  opacity: .92;
   z-index: 999;
   top: 60px;
 }
